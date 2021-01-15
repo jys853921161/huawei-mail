@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.top {
+				height: 50px;
+				background-color: #F2F2F2;
+			}
+
+			.ipt {
+				text-align: center;
+				margin-top: 30px;
+			}
+
+			input {
+				height: 30px;
+				width: 500px;
+				background-color: #F2F2F2;
+				border: 0px;
+				border-radius: 0.625rem;
+				margin-top: 20px;
+				outline:none;
+				padding: 11px;
+			}
+
+			.ipt p {
+				/* color: #FF0000; */
+				margin-left: -250px;
+				font-size: 15px;
+			}
+
+			.bottom p {
+				float: left;
+				margin-left: 10px;
+				margin-top: 40px;
+				font-size: 13px;
+			}
+
+			.bot p {
+				float: left;
+			}
+		</style>
+		<script src="js/通用类.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				$('#ipt2').onblur = function() {
+					if ($('#ipt2').value.length == 11 && $('#ipt2').innerHTML === Number) {
+						$('#p1').innerHTML = '';
+					} else {
+						
+						$('#p1').innerHTML = '请输入正确手机号';
+						$('#p1').style.color = 'red';
+					}
+				}
+				$('#ipt4').onblur = function() {
+					var oValue = $('#ipt4').value.replace(/ /g, '');
+					$('#ipt4').value = oValue;
+					if (oValue.length < 6 || oValue.length > 16) {
+						$('#p2').innerHTML = '请输入6到16个字符';
+						$('#p2').style.color = 'red';
+					} else {
+						$('#p2').innerHTML = '';
+					}
+				}
+				$('#ipt5').onblur = function() {
+					if ($('#ipt5').value != $('#ipt4').value) {
+						$('#p3').innerHTML = '密码不一致';
+						$('#p3').style.color = 'red';
+					} else {
+						$('#p3').innerHTML = '';
+						$('#p3').style.color = 'green';
+					}
+				}
+				$('#p4').onclick = function() {
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/Enter.html')
+				}
+				$('#tj').onclick = function() {
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/Enter.html')
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<img src="img/华为票提.jpg" style="width: 150px;height: 50px;margin-left: 300px;float: left;">
+			<div style="font-size: 20px;font-weight: 100;color: #A9A9A9;margin-left: 0px;float: left;margin-top: 11px;">|</div>
+			<div style="font-size: 20px;font-weight: 700;float: left;line-height: 3.125rem;margin-left: 10px;">华为商城</div>
+		</div>
+		<div class="center">
+			<p style="text-align: center;margin-top: 80px;font-size: 35px;margin-left: 5px;">华为账号注册</p>
+			<p style="text-align: center; margin-top: 10px;margin-left: -50px;font-size: 20px;">已有账号</p>
+			<p id="p4" style="position: absolute;left: 980px; top: 188px;color: royalblue;font-size: 18px; cursor: pointer;">去登陆
+				></p>
+		</div>
+		<div class="ipt" style="position: relative;">
+			<div>
+				<input type="" name="" id="ipt1" value="国家/地区" />
+				<select name="" id="" style="position: absolute;left: 1150px;top: 30px ;height: 30px; width: 50px;border: 0;background-color:#F2F2F2 ;">
+					<option value="">中国</option>
+					<option value="">美国</option>
+					<option value="">英国</option>
+					<option value="">法国</option>
+					<option value="">韩国</option>
+					<option value="">日本</option>
+				</select>
+			</div>
+			<div>
+				<input type="" name="" id="ipt2" value="" placeholder='请输入手机号' />
+				<p id="p1"></p>
+			</div>
+			<div>
+				<input type="" name="" id="ipt3" value="" placeholder='短信验证码' />
+			</div>
+			<div>
+				<input type="password" name="" id="ipt4" value="" placeholder='密码' />
+				<p id="p2"></p>
+			</div>
+			<div>
+				<input type="password" name="" id="ipt5" value="" placeholder='确认密码' />
+				<p id="p3"></p>
+			</div>
+			<div>
+				<input type="" name="" id="ipt6" value="" placeholder='出生日期' />
+			</div>
+		</div>
+		<div id="tj" style="background-color: royalblue; width: 300px;
+			height: 50px;font-size: 20px; line-height: 50px;text-align: center;margin-left: 800px;margin-top: 80px;color: white;
+			border-radius: 10px;cursor: pointer;">
+			立即注册
+		</div>
+		<div class="bottom" style="height: 105px;background-color: #F2F2F2; margin-top: 40px;">
+			<div class="top1">
+				<p style="margin-left: 680px;">华为账号与云空间用户协议</p>
+				<p style="color: #A9A9A9;">|</p>
+				<p>关于华为账号与云空间隐私的说明</p>
+				<p style="color: #A9A9A9;">|<p>
+						<p>常见问题</p>
+						<p style="color: #A9A9A9;">|</p>
+						<p>Cookies</p>
+						<div style="clear: both;"></div>
+						<div style="margin-left: 880px;font-size: 12px;color: #A9A9A9;margin-top: 10px;">华为账号 版权所有 2011-2020</div>
+			</div>
+	</body>
+</html>

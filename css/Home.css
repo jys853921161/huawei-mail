@@ -1,0 +1,295 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	/* background-color: #CF9436; */
+}
+input{
+	outline: none;
+	border: 0;
+	background-color: #EEEEEE;
+	border-radius: 10px;
+	font-size: 13px;
+	padding: 10px;
+	margin-top: -10px;
+	width: 250px;
+	margin-top: 13px;
+	margin-left: 130px;
+}
+.container {
+	width: 1200px;
+	margin: auto;
+}
+
+.tittle .pic {
+	float: left;
+}
+
+.tittle .bt>ul>li {
+	float: left;
+	font-size: 17px;
+	margin-top: 20px;
+	margin-left: 30px;
+	cursor: pointer;
+	color: #666;
+
+}
+
+.tittle .bt>ul>li:hover {
+	color: red;
+}
+
+.tittle .bt .huawei {
+	font: 600 25px/2 '';
+	margin-top: 7px;
+	margin-left: 5px;
+	color: #222222;
+}
+
+.bcpic {
+	height: 600px;
+	width: 1920px;
+	overflow: hidden;
+	margin-top: 0px;
+	position: relative;
+}
+
+.bcpic .bcpic1 {
+	width: 11520px;
+	position: absolute;
+}
+
+.bcpic img {
+	display: block;
+	height: 600px;
+	width: 1920px;
+	float: left;
+}
+.rmjp .center>div {
+	float: left;
+}
+
+.rmjp .center div {
+	float: left;
+	height: 450px;
+	width: 290px;
+	margin-left: 12px;
+	margin-top: 15px;
+	background-color: #eee;
+}
+
+.zwz {
+	font-size: 20px;
+}
+
+.ywz {
+	color: darkgrey;
+	font-size: 15px;
+}
+
+.jg {
+	background-color: black;
+	width: 100px;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	margin-left: 100px;
+}
+
+.rmjp .bottom>div {
+	float: left;
+	height: 450px;
+	width: 290px;
+	margin-left: 12px;
+	margin-top: 15px;
+	background-color: #eee;
+}
+
+.jxhh .jxhh1>div {
+	float: left;
+	height: 450px;
+	width: 290px;
+	margin-left: 12px;
+	margin-top: 15px;
+	background-color: #eee;
+}
+
+.jxhh .jxhh1 div img {
+	background-color: white;
+}
+
+.jxhh .jxhh2>div {
+	float: left;
+	height: 450px;
+	width: 290px;
+	margin-left: 12px;
+	margin-top: 15px;
+	background-color: #eee;
+}
+
+.jxdp .jxdp1 .jxdp2 {
+	background-color: white;
+	width: calc((600px - 20px) / 2);
+	height: 400px;
+	float: right;
+	margin-left: 10px;
+}
+
+.jxdp .jxdp3>div {
+	float: left;
+	height: 450px;
+	width: 290px;
+	margin-left: 12px;
+	margin-top: 15px;
+	background-color: #eee;
+}
+
+.jzsh .container div {
+	height: 450px;
+	width: 290px;
+	float: left;
+	margin-left: 12px;
+	margin-top: 15px;
+	background-color: #eee;
+}
+
+.jzsh .container img {
+	height: 290px;
+	width: 290px;
+	background-color: white;
+}
+
+p {
+	text-align: center;
+}
+
+.p1 {
+	font-size: 20px;
+	margin-top: 20px;
+	font-weight: 700;
+}
+
+.p2 {
+	margin-top: 20px;
+	color: darkgrey;
+	font-size: 15px;
+}
+
+.p3 {
+	color: white;
+	font-size: 15px;
+	background-color: black;
+	width: 100px;
+	margin: 20px auto;
+	border-radius: 10px;
+}
+
+#dhl {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background: linear-gradient(#FBA510, white, #CF9436);
+	height: 100px;
+	display: none;
+	width: 100%;
+	text-align: center;
+	z-index: 1111;
+}
+#dhl li {
+	font-size: 30px;
+	margin-top: 50px;
+	color: orangered;
+	cursor: pointer;
+	float: left;
+	margin-left: 150px;
+	margin-top: 27px;
+}
+
+#dhl li:hover {
+	background-color: royalblue;
+}
+
+.remai .container div {
+	height: 450px;
+	width: 290px;
+	float: left;
+	margin-left: 12px;
+	margin-top: 15px;
+	background-color: #eee;
+}
+
+.remai .container img {
+	height: 290px;
+	width: 290px;
+	background-color: white;
+}
+
+#gdt {
+	height: 200px;
+	width: 1200px;
+	overflow: hidden;
+	position: relative;
+}
+
+#gdt ul {
+	position: absolute;
+	top: 170px;
+	left: 980px;
+}
+
+#gdt ul li {
+	float: left;
+	margin-left: 30px;
+	background-color: cornsilk;
+	height: 20px;
+	width: 20px;
+	text-align: center;
+	color: cornflowerblue;
+	cursor: pointer;
+}
+
+.gdt1 {
+	position: absolute;
+}
+
+.gdt1 img {
+	height: 200px;
+	display: block;
+	border-radius: 10px;
+}
+
+#gdt ul li:hover {
+	background-color: red;
+}
+
+.butto {
+	position: absolute;
+	top: 550px;
+	left: 700px;
+}
+
+.butto button {
+	margin-left: 60px;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	background: rgba(255, 255, 255, 0.5);
+}
+.butto button:hover {
+	background-color: #FF0000;
+}
+#dl{
+	position: absolute;left: 1600px;top: 18px;color: cornflowerblue;
+}
+#zc{
+	position: absolute;left: 1650px;top: 18px;color: cornflowerblue;
+}
+#dl:hover{
+	cursor: pointer;
+	color: crimson;
+}
+#zc:hover{
+	cursor: pointer;
+	color: crimson;
+}

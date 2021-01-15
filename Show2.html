@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/Show2.css"/>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				var i = ($('#ipt1').val())
+				$('#jia1').mousedown(function() {
+					$('#ipt1').val(++i)
+					$('#jia1').css('background', 'red')
+				})
+				$('#jia1').mouseup(function() {
+					$('#jia1').css('background', '#eee')
+				})
+				$('#jian1').mousedown(function() {
+					if (i > 0) {
+						$('#ipt1').val(--i)
+					}
+					$('#jian1').css('background', 'red')
+				})
+				$('#jian1').mouseup(function() {
+					$('#jian1').css('background', '#eee')
+				})
+				$('#xy').click(function() {
+					$('.gd').animate({
+						left: -255
+					}, 1000)
+				})
+				$('#xz').click(function() {
+					$('.gd').animate({
+						left: 0
+					}, 1000)
+				});
+
+				$(window).scroll(function() {
+					if ($(window).scrollTop() > 900) {
+						$('#fix1').css('position', 'fixed')
+					} else {
+						$('#fix1').css('position', 'relative')
+					}
+				})
+				$('#l1').click(function() {
+					window.scroll(0, 1030);
+				})
+				$('#l2').click(function() {
+					window.scroll(0, 24150);
+				})
+				$('#l3').click(function() {
+					window.scroll(0, 25580);
+				})
+				$('#l4').click(function() {
+					window.scroll(0, 26200);
+				})
+				$('.top1').hover(function() {
+					$('#smallbox').css('display', 'block')
+					$('#bigbox').css('display', 'block')
+					$('.top1').mousemove(function(event) {
+						var e = event || window.event
+						var left = e.pageX - $('#smallbox').width() / 2 - $('.top1').offset().left;
+						var top = e.pageY - $('#smallBox').height() / 2 - $('.top1').offset().top * 1.7;
+						console.log($('.top1').offset().top)
+						if (left <= 0) {
+							left = 0;
+						};
+						if (left >= 250) {
+							left = 250;
+						};
+						if (top <= 0) {
+							top = 0
+						};
+						if (top >= 250) {
+							top = 250;
+						};
+						$('#smallbox').css({
+							left: left,
+							top: top
+						});
+						$('#bigbox').find('img').css({
+							left: -left * 900 / 450,
+							top: -top * 900 / 450,
+						})
+					})
+				}, function() {
+					$('#smallbox').css('display', 'none')
+					$('#bigbox').css('display', 'none')
+				})
+				$('#gm').click(function() {
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/car.html')
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<div class="container">
+				<img id="pic" src="img/手机页面标题.png" style="float: left;margin-top: 8px;margin-left: -20px;cursor: pointer;">
+				<ul>
+					<li>全部商品分类</li>
+					<li style="color: white;background-color:#FF8486;height: 40px;margin-top: 20px;line-height: 40px;border-radius: 10px;">华为专区</li>
+					<li style="color: white;background-color:#74C7FF;height: 40px;margin-top: 20px;line-height: 40px;border-radius: 10px;">荣耀专区</li>
+					<li>P40</li>
+					<li>荣耀30</li>
+					<li>智能家居</li>
+				</ul>
+				<input type="text" src="" style="width: 200px;height: 25px;border: 0;
+				background-color: #EEEEEE;margin-top: 27px;margin-left: 70px;border-radius: 20px;" />
+			</div>
+		</div>
+		<div class="center">
+			<div class="container">
+				<div class="tittle">
+					<div class="tittle1">
+						<span style="margin-left: 0;">首页</span>
+						<span>></span>
+						<span>手机</span>
+						<span>></span>
+						<span>HUAWEI Mate系列</span>
+						<span>></span>
+						<span>HUAWEI Mate Xs 5G全网通 8GB+512GB（星际蓝）</span>
+					</div>
+				</div>
+
+				<!-- 商品介绍左半部分 -->
+				<div class="left">
+					<div class="top1" style="position: relative;">
+						<img id="xzp1" src="img/大保时捷1.png" alt="" style="width: 400px;height: 400px;margin-top: 30px;">
+						<div id="smallbox" style="position: absolute;height: 200px;width: 200px;
+						background-color: rgba(0,0,0,0.3);bottom: 300px display: none;left: 300px;"></div>
+						<div id="bigbox" style="position: absolute;top: 0;left: 480px;height: 400px;width: 400px;border: 3px solid #A9A9A9;
+						overflow: hidden;display: none;text-align: center;">
+							<img id="dzp1" src="img/大保时捷1.png" style="width: 800px;height: 800px;position: absolute;">
+						</div>
+					</div>
+					<div class="bottom">
+						<div class="gd">
+							<img id="img1" src="img/保时捷1.png" style="margin-left: 30px;">
+							<img id="img2" src="img/保时捷2.png">
+							<img id="img3" src="img/保时捷3.png">
+							<img id="img4" src="img/保时捷4.png">
+							<img id="img5" src="img/保时捷5.png">
+						</div>
+					</div>
+					<div id="xz" style="position: absolute;height: 30px;width: 30px;left:345px;top: 631px;
+					color:  #A9A9A9;border-radius: 50%;border: 1px solid #A9A9A9;
+					text-align: center;line-height: 27px;cursor: pointer;">
+						< </div> <div id="xy" style="position: absolute;height: 30px;width: 30px;left:783px;top: 630px;
+					color:  #A9A9A9;border-radius: 50%;border: 1px solid #A9A9A9;
+					text-align: center;line-height: 27px;cursor: pointer;">
+							>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- 商品介绍右半部分 -->
+			<div class="right">
+				<p>HUAWEI Mate 30 RS 保时捷设计 5G全网通 12GB + 512GB(玄黑)</p>
+				<p style="font-size: 13px;">
+					<span style="margin-left: 0px;"><br>保时捷超跑基因，臻选皮质，匠心考究，麒麟990 5G旗舰SoC芯片，超曲面OLED环幕屏</span>
+				</p>
+				<div style="height: 150px;background-color: #F2F2F2;margin-top: 20px;border: 1px solid #EEEEEE;">
+					<p style="margin-top:10px;">
+						<span style="font-size: 13px;">&emsp;&emsp;价&emsp;&emsp;&emsp;格</span>
+						<span style="color: #DC143C;font-size: 25px;margin-left: 30px;">￥12999.00</span>
+					</p>
+					<p style="margin-top:10px;">
+						<span style="font-size: 13px;">&emsp;&emsp;促&emsp;&emsp;&emsp;销</span>
+						<br>
+						<span style="border: 1px solid #DC143C;font-size: 13px;color: #DC143C;margin-left: 130px;">赠品</span>
+						<br>
+						<br>
+						<span style="border: 1px solid #DC143C;font-size: 13px;color: #DC143C;margin-left: 130px;">促销商品</span>
+						<span style="font-size: 13px;margin-left: 30px;">购买即赠商城积分，积分可抵现~</span>
+					</p>
+				</div>
+
+				<!-- 价格下面 -->
+				<div class="fwsm" style="border-bottom: 1px solid #F2F2F2;height: 80px;">
+					<br>
+					<span>服务说明</span>
+					<span style="margin-left: 30px;">已满48元以免运费</span>
+					<span style="margin-left: 30px;">由华为商城负责负责发货，并提供售后服务</span>
+					<br>
+					<br>
+					<span>商品编码</span>
+					<span style="margin-left: 30px;">2601010181301</span>
+				</div>
+
+				<!-- 样式选择 -->
+				<div class="ysxz">
+					<ul style="margin-left: 0;">
+						<li>选择颜色</li>
+						<li>选择版本</li>
+						<li>选择套餐</li>
+						<li>推荐</li>
+						<li style="margin-top: 60px;">已选择商品</li>
+					</ul>
+					<ul style="margin-top: -10px;text-align: center;">
+						<li style="height: 40px;width: 80px;border: 1px solid #DC143C;text-align: center;line-height: 40px;">
+							<img src="img/保时捷1.png" style="height: 30px;width: 30px;float: left;margin-top: 5px;margin-left: 5px;">
+							<p style="float: left;">星际蓝</p>
+						</li>
+						<li style="border: 1px solid #DC143C;margin-top: 15px;height: 20px;width: 200px;">5G全网通 8GB+512GB</li>
+						<li style="border: 1px solid #DC143C;margin-top: 23px;height: 20px;width: 80px;">官方标配</li>
+						<li class="li1">
+							<p style="margin-left: 0px;">绿联MateX/XS 车载支架</p>
+							<p>绿联手机桌面折叠支架</p>
+							<p>HUAWEI Mate Xs信封真皮保护套</p>
+							<br>
+							<br>
+							<p style="margin-left: 0px;">华为手环B6</p>
+						</li>
+						<li style="color: #DC143C;margin-top: 45px;margin-left: -300px;">玄黑 / 5G全网通 12GB+512GB / 官方标配</li>
+					</ul>
+				</div>
+				<!-- 清除浮动 -->
+				<div style="clear: both;"></div>
+				<input type="text" name="" id="ipt1" value="1" style="height: 40px;width: 40px;text-align: center;font-size: 30px;
+				margin-top: 20px;float: left;" />
+				<div id="jia1" style="float: left;font-size: 20px;background-color: #EEEEEE;width: 20px;height: 20px;text-align: center;
+				margin-top: 1.25rem;cursor: pointer;">^</div>
+				<div id="jian1" style="float: left;font-size: 20px;background-color: #EEEEEE;width: 20px;height: 20px;text-align: center;
+				margin-top: 45px;margin-left: -20px;transform: rotate(180deg);cursor: pointer;">^</div>
+				<div id="gm" style="color: white;background-color: #DC143C;
+				width: 200px;height: 50px;margin-left: 100px;text-align: center;font-size: 20px;
+				line-height: 50px;margin-top: 17px;cursor: pointer;">购买</div>
+			</div>
+		</div>
+		</div>
+		<div style="clear: both;"></div>
+		<div id="fix1" style="height: 100px;border-top: #A9A9A9 1px solid;">
+			<div class="container">
+				<ul style="line-height: 100px;">
+					<li id="l1">商品详情</li>
+					<li id="l2">规格参数</li>
+					<li id="l3">包装售后</li>
+					<li id="l4">用户评价(6800+)</li>
+				</ul>
+			</div>
+		</div>
+		<div class="pics">
+			<img src="img/保时捷大1.jpg">
+			<img src="img/保时捷大2.jpg">
+			<img src="img/保时捷大3.jpg">
+			<img src="img/保时捷大4.jpg">
+			<img src="img/保时捷大5.jpg">
+			<img src="img/保时捷大6.jpg">
+			<img src="img/保时捷大7.jpg">
+			<img src="img/保时捷大8.jpg">
+			<img src="img/保时捷大9.jpg">
+			<img src="img/保时捷大10.jpg">
+			<img src="img/详情页图片11.jpg">
+			<img src="img/详情页图片17.jpg">
+			<img src="img/详情页图片18.jpg">
+		</div>
+		<div class="ggcs" style="height: 2000px;">
+			<div class="container">
+				<div style="font-size: 20px;margin-top: 50px;border-left: 5px #DC143C solid;"><span style="margin-left: 20px;">规格参数</span></div>
+				<div class="zycs" style="margin-top: 30px;border-top: 1px solid #A9A9A9;">
+					<ul style="font-size: 25px;font-weight: 600;margin-left: 0px;">
+						<li>主要参数</li>
+					</ul>
+					<ul>
+						<li>传播名</li>
+						<li style="margin-top: 50px;">电池容量</li>
+						<li style="margin-top: 115px;">后置摄像头</li>
+						<li style="margin-top: 155px;">前置摄像头</li>
+						<li style="margin-top: 155px;">屏幕尺寸</li>
+						<li style="margin-top: 113px;">上市时间</li>
+						<li style="margin-top: 50px;">屏幕色彩</li>
+						<li style="margin-top: 70px;">运行内存</li>
+						<li style="margin-top: 50px;">机身内存</li>
+						<li style="margin-top: 50px;">最大支持扩展</li>
+						<li style="margin-top: 50px;">分辨率</li>
+						<li style="margin-top: 72px;">CPU型号</li>
+						<li style="margin-top: 50px;">CPU核数</li>
+					</ul>
+					<ul class="ul2">
+						<li style="margin-top: 0;">HUAWEI Mate Xs</li>
+						<li>4500mAh（典型值） 备注：<br>容量为2250mAh（典型值）*2；<br>4400mAh（额定值） 备注：<br>容量为2200mAh（额定值）*2</li>
+						<li>后置徕卡四摄： 4000万像素超感光摄像头<br>（广角，f/1.8光圈）+1600万像素超<br>广角摄像头（f/2.2光圈）+800万像素<br>长焦摄像头（f/2.4光圈，OIS）+ 华为 Time<br>-of-Flight(ToF)摄像头，支持自动对焦<br>（相位对焦/反差对焦），支持AIS防抖。</li>
+						<li>前置（手机折叠后将后置摄像头当前置使用<br>:4000万像素超感光摄像头（广角，<br>f/1.8光圈）+1600万像素超广角摄像头<br>（f/2.2光圈）+800万像素长焦摄像头（f/2.4光圈<br>，OIS）+
+							华为 Time-of-Flight(ToF)摄像头，<br>支持自动对焦（相位对焦/反差对焦），支持AIS防抖</li>
+						<li>展开态:8英寸；折叠态:主屏:6.6英寸；副屏:6 <br>.38英寸备注:显示屏采用圆角设计，按照<br>标准矩形测量时，屏幕的对角线长度值<br>（实际可视区域较小）。</li>
+						<li>2020年3月</li>
+						<li>1670万色，色域（DCI-P3）：103%（典型<br>值）</li>
+						<li>8GB</li>
+						<li>512GB</li>
+						<li>256GB NM存储卡（非标配，需另行购买）</li>
+						<li>展开态:2480*2200；折叠态:主屏:2480*1148；<br>副屏:2480*892</li>
+						<li>HUAWEI Kirin 990 5G(麒麟990 5G)</li>
+						<li>八核</li>
+					</ul>
+					<ul style="font-size: 13px; color: #A9A9A9;">
+						<li style="margin-top: 210px;">备注：不同拍照模式的照片像素可能有差异，请以实际为准。</li>
+						<li style="margin-top: 160px;">备注：不同拍照模式的照片像素可能有差异，请以实际为准。</li>
+						<li style="margin-top: 160px;">备注：显示屏采用圆角设计，按照标准矩形测量时，屏幕的对<br>角线长度值（实际可视区域较小）。</li>
+						<li style="margin-top: 260px;">备注：可使用的内存容量小于此值，因为手机软件占用的空间。</li>
+						<li style="margin-top: 50px;">备注：可使用的内存容量小于此值，因为手机软件占用的空间。</li>
+					</ul>
+				</div>
+				<!-- 清除浮动 -->
+				<div style="clear: both;"></div>
+				<div style="font-size: 20px;margin-top: 50px;border-left: 5px #DC143C solid;"><span style="margin-left: 20px;">包装</span></div>
+				<div class="bz" style="border-top: #A9A9A9 1px solid;margin-top: 20px;">
+					<ul>
+						<li>手机(含专用保护膜) X 1</li>
+						<li>三包凭证 X 1</li>
+						<li>折叠保护壳 X 1</li>
+					</ul>
+					<ul>
+						<li>电池（内置） X 1</li>
+						<li>Type-C数字耳机 X 1</li>
+						<li>温馨提示卡片 X 1</li>
+					</ul>
+					<ul>
+						<li>快速指南 X 1</li>
+						<li>Type-C 数据线 X 1</li>
+						<li>折叠保护壳安装说明书 X 1</li>
+					</ul>
+					<ul>
+						<li>华为SuperCharge 充电器 X 1</li>
+						<li>取卡针 X 1</li>
+					</ul>
+				</div>
+				<div style="clear: both;"></div>
+				<div style="font-size: 20px;margin-top: 50px;border-left: 5px #DC143C solid;"><span style="margin-left: 20px;">售后服务</span></div>
+				<div class="bz" style="border-top: #A9A9A9 1px solid;margin-top: 20px;">
+					<ul>
+						<li>本产品全国联保，享受三包服务，质保期为：一年质保</li>
+						<li>如因质量问题或故障，凭厂商维修中心或特约维修点的质量检测证明，享受7天内退货，15日内换货，15日以上在质保期内享受免费保修等三包服务！</li>
+						<li>售后服务电话：950801</li>
+						<li>华为消费者BG官网： https://consumer.huawei.com/cn/</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<div style="clear: both;"></div>
+		<img src="img/评价1.png">
+		<img src="img/评价2.png">
+		<img src="img/评价3.png">
+		<div class="fotter">
+			<div class="container">
+				<div class="fotter1">
+					<div style="margin-left: 0;">
+						<img src="img/奖牌.png" style="">
+						<p>百强企业 品质保证</p>
+					</div>
+					<div>
+						<img src="img/七天退换.png">
+						<p>7天退货 15天换货</p>
+					</div>
+					<div>
+						<img src="img/运费.png">
+						<p>48元起免运费</p>
+					</div>
+					<div>
+						<img src="img/定位.png">
+						<p>2000家服务店 全国联保</p>
+					</div>
+				</div>
+				<div class="fotter2">
+					<div style="margin-left: 0px;">
+						<p style="font-size: 17px;color: #000000;">购物相关</p>
+						<p style="margin-top: 15px;">购物指南</p>
+						<p>配送方式</p>
+						<p>支付方式</p>
+						<p>常见问题</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">保修与退换货</p>
+						<p style="margin-top: 15px;">保修政策</p>
+						<p>退换货政策</p>
+						<p>退换货流程</p>
+						<p>保修状态查询</p>
+						<p>配件防伪查询</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">维修与技术支持</p>
+						<p style="margin-top: 15px;">服务店</p>
+						<p>预约维修</p>
+						<p>手机寄修</p>
+						<p>备件价格查询</p>
+						<p>上门服务</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">特色服务</p>
+						<p style="margin-top: 15px;">防伪查询</p>
+						<p>补购保障</p>
+						<p>以旧换新</p>
+						<p>礼品包装</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">关于我们</p>
+						<p style="margin-top: 15px;">公司介绍</p>
+						<p>华为商城简介</p>
+						<p>华为零售店</p>
+						<p>荣耀零售店</p>
+						<p>商家中心</p>
+						<p>意见反馈</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">友情链接</p>
+						<p style="margin-top: 15px;">华为集团</p>
+						<p>华为CBG官网</p>
+						<p>荣耀官网</p>
+						<p>花粉俱乐部</p>
+						<p>华为云</p>
+					</div>
+					<div style="text-align: center;margin-left: 45px; border-left: 1px #A9A9A9 solid;padding: 30px;height: 80px;">
+						<p style="color: #575757;font-size: 25px;font-weight: 800;margin-top: -30px;">950805</p>
+						<p style="margin-top: 10px;">7×24小时客服热线（仅收市话费）</p>
+						<p style="background-color: #000000;color: white;border-radius: 20px;
+							height: 30px;width: 150px;font-size: 18px;line-height: 30px;text-align: center;
+							margin-left: 35px;margin-top: 20px;">在线客服</p>
+						<p style="margin-top: 10px;">关于Vmall：</p>
+					</div>
+				</div>
+				<div class="footer3" style="margin-top: 30px;">
+					<img src="img/手机页底部png.png" style="height: 20px;float: left;">
+					<p style="float: left;color: #A9A9A9;font-size: 13px;margin-left: 1.25rem;">
+						华为集团 | 华为CBG官网 | 荣耀官网 | 花粉俱乐部 | 华为应用市场 | EMUI | 华为终端云空间 | 开发者联盟 | 华为商城手机版 | 网站地图 <br>隐私声明 服务协议 COOKIES Copyright
+						© 2012-2020 华为终端有限公司 版权所有 粤ICP备19015064号|粤公网安备 44190002003939号
+						<br>增值电信业务经营许可证：粤B2-20190762|备案主体编号：44201919072182</p>
+					<img src="img/营业执照.png" style="margin-left: 1100px;float: left;">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

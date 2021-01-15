@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/car.css"/>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+			 	var i = ($('#ipt1').val())
+				$('#jia1').mousedown(function() {
+					$('#ipt1').val(++i)
+					$('#jia1').css('color', 'red')
+					$('#jg1').text($('#ipt1').val() * 7399.00)
+					console.log($('#xfk2').prop('checked'))
+					if ($('#xfk2').prop('checked')) {
+						if ($('#xfk3').prop('checked')) {
+							$('#ipt3').val('￥' + (($('#ipt1').val() * 7399.00) + $('#ipt2').val() * 16999.00))
+						} else {
+							$('#ipt3').val('￥' + ($('#ipt1').val() * 7399.00))
+						}
+					}
+				})
+				$('#jia1').mouseup(function() {
+					$('#jia1').css('color', '#A9A9A9')
+				})
+				$('#jian1').mousedown(function() {
+					if (i > 0) {
+						$('#ipt1').val(--i)
+						$('#jg1').text($('#ipt1').val() * 7399.00)
+						if ($('#xfk2').prop('checked')) {
+							if ($('#xfk3').prop('checked')) {
+								$('#ipt3').val('￥' + (($('#ipt1').val() * 7399.00) + $('#ipt2').val() * 16999.00))
+							} else {
+								$('#ipt3').val('￥' + ($('#ipt1').val() * 7399.00))
+							}
+						}
+					}
+					$('#jian1').css('color', 'red')
+				})
+				$('#jian1').mouseup(function() {
+					$('#jian1').css('color', '#A9A9A9')
+				})
+				$('#jia2').mousedown(function() {
+					$('#ipt2').val(++i)
+					$('#jia2').css('color', 'red')
+					$('#jg2').text($('#ipt2').val() * 16999.00)
+					if ($('#xfk3').prop('checked')) {
+						if ($('#xfk2').prop('checked')) {
+							$('#ipt3').val('￥' + (($('#ipt1').val() * 7399.00) + $('#ipt2').val() * 16999.00))
+						} else {
+							$('#ipt3').val('￥' + ($('#ipt2').val() * 16999.00))
+						}
+
+					}
+				})
+				$('#jia2').mouseup(function() {
+					$('#jia2').css('color', '#A9A9A9')
+				})
+				$('#jian2').mousedown(function() {
+					if (i > 0) {
+						$('#ipt2').val(--i)
+						$('#jg2').text($('#ipt2').val() * 16999.00)
+						if ($('#xfk3').prop('checked')) {
+							if ($('#xfk2').prop('checked')) {
+								$('#ipt3').val('￥' + (($('#ipt1').val() * 7399.00) + $('#ipt2').val() * 16999.00))
+							} else {
+								$('#ipt3').val('￥' + ($('#ipt2').val() * 16999.00))
+							}
+						}
+					}
+					$('#jian2').css('color', 'red')
+				})
+				$('#jian2').mouseup(function() {
+					$('#jian2').css('color', '#A9A9A9')
+				})
+				// 全选事件
+				$('#xfk1').click(function() {
+					$('#xfk2').prop('checked', true)
+					$('#xfk3').prop('checked', true)
+					$('#xfk4').prop('checked', false)
+					if ($('#xfk1').prop('checked')) {
+						$('#ipt3').val('￥' + (($('#ipt1').val() * 7399.00) + $('#ipt2').val() * 16999.00))
+					}
+				})
+				$('#xfk2').click(function() {
+					if ($('#xfk2').prop('checked')) {
+						if ($('#xfk3').prop('checked')) {
+							$('#ipt3').val('￥' + (($('#ipt1').val() * 7399.00) + $('#ipt2').val() * 16999.00))
+						} else {
+							$('#ipt3').val('￥' + ($('#ipt1').val() * 7399.00))
+						}
+
+					} else {
+						$('#ipt3').val('￥' + ($('#ipt2').val() * 16999.00))
+					}
+				})
+				$('#xfk3').click(function() {
+					if ($('#xfk3').prop('checked')) {
+						if ($('#xfk2').prop('checked')) {
+							$('#ipt3').val('￥' + (($('#ipt1').val() * 7399.00) + $('#ipt2').val() * 16999.00))
+						} else {
+							$('#ipt3').val('￥' + ($('#ipt2').val() * 16999.00))
+						}
+
+					} else {
+						$('#ipt3').val('￥' + ($('#ipt1').val() * 7399.00))
+					}
+				})
+				$('#xfk4').click(function() {
+					$('#xfk2').prop('checked', false)
+					$('#xfk3').prop('checked', false)
+					$('#xfk1').prop('checked', false)
+					if ($('#xfk4').prop('checked')) {
+						$('#ipt3').val(0)
+					}
+				})
+				var count = 0;
+				$('.an1').each(function(i) {
+					console.log($('.an1')[i].checked)
+					$(this).click(function() {
+						if ($('.an1')[i].checked) {
+							count++;
+						} else {
+							count--;
+						}
+						if (count == $('.an1').length) {
+							$('#xfk1').prop('checked', true)
+						} else {
+							$('#xfk1').prop('checked', false)
+						}
+					})
+				})
+				// 删除事件
+				$('#p3').click(function() {
+					$('.sp1').css('display', 'none')
+					if ($('#xfk3').prop('checked')) {
+						$('#ipt3').val('￥' + ($('#ipt2').val() * 16999.00))
+					} else {
+						$('#ipt3').val(0)
+					}
+				})
+
+				$('#p6').click(function() {
+					$('.sp2').css('display', 'none')
+					if ($('#xfk2').prop('checked')) {
+						$('#ipt3').val('￥' + ($('#ipt1').val() * 7399.00))
+					} else {
+						$('#ipt3').val(0)
+					}
+				})
+
+			})
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<div class="container">
+				<img src="img/WTDdguIWgNsNWtK0Q1Z3.png" style="width: 150px;margin-top: 12px;float: left;">
+				<p style="font-size: 22px;color: #333;float: left;line-height: 80px;margin-left: 50px;">我的购物车</p>
+			</div>
+		</div>
+		<div class="center">
+			<div class="container">
+				<div class="top1">
+					<input type="checkbox" name="" id="xfk1" value="" style="margin-top: 20px;margin-left: 30px;float: left;" />
+					<p style="margin-left: 20px;">全选</p>
+					<p style="margin-left: 150px;">商品</p>
+					<p style="margin-left: 450px;">单价</p>
+					<p style="margin-left: 100px;">数量</p>
+					<p style="margin-left: 100px;">小计</p>
+					<p style="margin-left: 100px;">操作</p>
+				</div>
+				<div class="sp1">
+					<input class="an1" type="checkbox" name="" id="xfk2" value="" style="margin-top: 70px;margin-left: 30px;float: left;" />
+					<ul style="float: left;">
+						<li>
+							<img src="./img/333.png" style="margin-left: -15px;">
+						</li>
+						<li>
+							<p>HUAWEI Mate 30 Pro 5G 全网通 8GB+512GB 麒麟990 双4000万徕卡<br>电影四摄（翡冷翠</p>
+							<p style="margin-top: 5px;">翡冷翠 5G全网通 8GB+512GB 官方标配</p>
+							<p class="p1">分期免息</p>
+						</li>
+						<li style="margin-left: 38px;">
+							<p>￥7399.00</p>
+						</li>
+						<li style="position: relative;margin-left: 55px;overflow: hidden;">
+							<input type="text" name="" id="ipt1" value="1" />
+							<p id="jia1" style="position: absolute;font-size: 25px;top: -7px;left: 56px;border-left: solid 1px #EEEEEE;">+</p>
+							<p id="jian1" style="position: absolute;font-size: 35px;top: -15px;left: 5px;border-right: solid 1px #EEEEEE;">-<p>
+						</li>
+						<li style="color: #DC143C;margin-left: 50px;">
+							<p id="jg1">7399.00</p>
+						</li>
+						<li style="margin-left: 90px;">
+							<p id="p3">删除</p>
+						</li>
+					</ul>
+				</div>
+				<div class="sp2">
+					<input class="an1" type="checkbox" name="" id="xfk3" value="" style="margin-top: 70px;margin-left: 30px;float: left;" />
+					<ul style="float: left;">
+						<li>
+							<img src="img/777.png" style="margin-left: -15px;">
+						</li>
+						<li>
+							<p>HUAWEI Mate Xs 5G全网通 8GB+512GB（星际蓝）</p>
+							<br>
+							<p style="margin-top: 5px;">鹰翼式折叠设计|麒麟990 5G旗舰芯片|8英寸可折叠全面屏</p>
+							<p class="p1">分期免息</p>
+						</li>
+						<li style="margin-left: 125px;">
+							<p>￥16999.00</p>
+						</li>
+						<li style="position: relative;margin-left: 52px;overflow: hidden;">
+							<input type="text" name="" id="ipt2" value="1" />
+							<p id="jia2" style="position: absolute;font-size: 25px;top: -7px;left: 56px;border-left: solid 1px #EEEEEE;">+</p>
+							<p id="jian2" style="position: absolute;font-size: 35px;top: -15px;left: 5px;border-right: solid 1px #EEEEEE;">-<p>
+						</li>
+						<li style="color: #DC143C;margin-left: 50px;">
+							<p id="jg2">16999.00</p>
+						</li>
+						<li style="margin-left: 78px;">
+							<p id="p6">删除</p>
+						</li>
+					</ul>
+				</div>
+				<div class="fk">
+					<input type="checkbox" name="" id="xfk4" value="" style="margin-top: 34px;margin-left: 30px;float: left;" />
+					<p style="float: left;font-size: 13px;color: #A9A9A9;line-height: 80px;margin-left: 20px;">取消全选</p>
+					<p style="float: left;font-size: 16px;color: #333;line-height: 80px;margin-left: 680px;">总计 :</p>
+					<input type="text" name="" id="ipt3" value="¥0.00" style="margin-left: 80px;width: 120px;height: 30px;
+					font-size: 25px;color: #DC143C;border: 0;matext-align: center;margin-top: 25px;" />
+					<div style="background-color: #DC143C;float: left;color: white;
+					margin-left: 244px;height: 80px;line-height: 80px;width: 120px;text-align: center;font-size: 20px;
+					font-weight: 600;cursor: pointer;margin-top: -55px;">立即结算</div>
+				</div>
+			</div>
+		</div>
+		<div class="fotter">
+			<div class="container">
+				<div class="fotter1">
+					<div style="margin-left: 0;">
+						<img src="img/奖牌.png" style="">
+						<p>百强企业 品质保证</p>
+					</div>
+					<div>
+						<img src="img/七天退换.png">
+						<p>7天退货 15天换货</p>
+					</div>
+					<div>
+						<img src="img/运费.png">
+						<p>48元起免运费</p>
+					</div>
+					<div>
+						<img src="img/定位.png">
+						<p>2000家服务店 全国联保</p>
+					</div>
+				</div>
+				<div class="fotter2">
+					<div style="margin-left: 0px;">
+						<p style="font-size: 17px;color: #000000;">购物相关</p>
+						<p style="margin-top: 15px;">购物指南</p>
+						<p>配送方式</p>
+						<p>支付方式</p>
+						<p>常见问题</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">保修与退换货</p>
+						<p style="margin-top: 15px;">保修政策</p>
+						<p>退换货政策</p>
+						<p>退换货流程</p>
+						<p>保修状态查询</p>
+						<p>配件防伪查询</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">维修与技术支持</p>
+						<p style="margin-top: 15px;">服务店</p>
+						<p>预约维修</p>
+						<p>手机寄修</p>
+						<p>备件价格查询</p>
+						<p>上门服务</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">特色服务</p>
+						<p style="margin-top: 15px;">防伪查询</p>
+						<p>补购保障</p>
+						<p>以旧换新</p>
+						<p>礼品包装</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">关于我们</p>
+						<p style="margin-top: 15px;">公司介绍</p>
+						<p>华为商城简介</p>
+						<p>华为零售店</p>
+						<p>荣耀零售店</p>
+						<p>商家中心</p>
+						<p>意见反馈</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">友情链接</p>
+						<p style="margin-top: 15px;">华为集团</p>
+						<p>华为CBG官网</p>
+						<p>荣耀官网</p>
+						<p>花粉俱乐部</p>
+						<p>华为云</p>
+					</div>
+					<div style="text-align: center;margin-left: 45px; border-left: 1px #A9A9A9 solid;padding: 30px;height: 80px;">
+						<p style="color: #575757;font-size: 25px;font-weight: 800;margin-top: -30px;">950805</p>
+						<p style="margin-top: 10px;">7×24小时客服热线（仅收市话费）</p>
+						<p style="background-color: #000000;color: white;border-radius: 20px;
+								height: 30px;width: 150px;font-size: 18px;line-height: 30px;text-align: center;
+								margin-left: 35px;margin-top: 20px;">在线客服</p>
+						<p style="margin-top: 10px;">关于Vmall：</p>
+					</div>
+				</div>
+				<div class="footer3" style="margin-top: 30px;">
+					<img src="img/手机页底部png.png" style="height: 20px;float: left;">
+					<p style="float: left;color: #A9A9A9;font-size: 13px;margin-left: 1.25rem;">
+						华为集团 | 华为CBG官网 | 荣耀官网 | 花粉俱乐部 | 华为应用市场 | EMUI | 华为终端云空间 | 开发者联盟 | 华为商城手机版 | 网站地图 <br>隐私声明 服务协议 COOKIES Copyright
+						© 2012-2020 华为终端有限公司 版权所有 粤ICP备19015064号|粤公网安备 44190002003939号
+						<br>增值电信业务经营许可证：粤B2-20190762|备案主体编号：44201919072182</p>
+					<img src="img/营业执照.png" style="margin-left: 1100px;float: left;">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="css/phone.css" />
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('li').eq(0).mouseover(function() {
+					$('.yc').stop().slideDown(400, function() {
+						$('.yc').css('display', 'block')
+						$('#sj').css('display', 'block')
+					})
+				})
+				$('li').eq(0).mouseout(function() {
+					$('.yc').stop().slideDown(100, function() {
+						$('.yc').css('display', 'none')
+						$('#sj').css('display', 'none')
+					})
+				})
+				$('li').eq(1).mouseover(function() {
+					$('.yc').stop().slideDown(400, function() {
+						$('.yc').css('display', 'block')
+						$('#dn').css('display', 'block')
+					})
+				})
+				$('li').eq(1).mouseout(function() {
+					$('.yc').stop().slideDown(100, function() {
+						$('.yc').css('display', 'none')
+						$('#dn').css('display', 'none')
+					})
+				})
+				$('li').eq(2).mouseover(function() {
+					$('.yc').stop().slideDown(400, function() {
+						$('.yc').css('display', 'block')
+						$('#pb').css('display', 'block')
+					})
+				})
+				$('li').eq(2).mouseout(function() {
+					$('.yc').stop().slideDown(100, function() {
+						$('.yc').css('display', 'none')
+						$('#pb').css('display', 'none')
+					})
+				})
+				$('li').eq(3).mouseover(function() {
+					$('.yc').stop().slideDown(400, function() {
+						$('.yc').css('display', 'block')
+						$('#jj').css('display', 'block')
+					})
+				})
+				$('li').eq(3).mouseout(function() {
+					$('.yc').stop().slideDown(100, function() {
+						$('.yc').css('display', 'none')
+						$('#jj').css('display', 'none')
+					})
+				})
+				$('li').eq(4).mouseover(function() {
+					$('.yc').stop().slideDown(400, function() {
+						$('.yc').css('display', 'block')
+						$('#pj').css('display', 'block')
+					})
+				})
+				$('li').eq(4).mouseout(function() {
+					$('.yc').stop().slideDown(100, function() {
+						$('.yc').css('display', 'none')
+						$('#pj').css('display', 'none')
+					})
+				})
+				$('#pic').click(function() {
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/Home.html')
+				})
+				$('i').eq(0).mouseover(function() {
+					$('#guc').stop().show(300, function() {
+						$('#guc').css('display', 'block')
+					})
+				})
+				$('i').eq(0).mouseout(function() {
+					$('#guc').stop().hide(300, function() {
+						$('#guc').css('display', 'none')
+					})
+				})
+				$('i').eq(1).mouseover(function() {
+					$('#kf').stop().show(300, function() {
+						$('#kf').css('display', 'block')
+					})
+				})
+				$('i').eq(1).mouseout(function() {
+					$('#kf').stop().hide(300, function() {
+						$('#kf').css('display', 'none')
+					})
+				})
+				$('i').eq(2).mouseover(function() {
+					$('#fw').stop().show(300, function() {
+						$('#fw').css('display', 'block')
+					})
+				})
+				$('i').eq(2).mouseout(function() {
+					$('#fw').stop().hide(300, function() {
+						$('#fw').css('display', 'none')
+					})
+				})
+				// 价格排序
+				var a = 0;
+				$("#sp1").click(
+					function() {
+						a++;
+						var arr = new Array();
+						//遍历节点取值赋给数组，并绑定事件
+						//.each(function(index,Element))   返回jQuery
+						// 描述：遍历一个jQuery对象，为每个匹配元素执行一个函数
+						//index表示当前元素的位置  e表示当前的元素
+						$(".p4").each(function(index, e) {
+							arr[index] = parseInt($(e).text().substring(1));
+						});
+						if (a % 2 != 0) {
+							//  升序
+							for (var i = 1; i < arr.length; i++) {
+								for (var j = 0; j < arr.length - i; j++) {
+									var temp = 0;
+									if (arr[j] > arr[j + 1]) {
+										temp = arr[j];
+										arr[j] = arr[j + 1];
+										arr[j + 1] = temp;
+									}
+								}
+							}
+						} else {
+							//  降序
+							for (var i = 1; i < arr.length; i++) {
+								for (var j = 0; j < arr.length - i; j++) {
+									var temp = 0;
+									if (arr[j] < arr[j + 1]) {
+										temp = arr[j];
+										arr[j] = arr[j + 1];
+										arr[j + 1] = temp;
+									}
+								}
+							}
+						}
+						// 获取数组的长度
+						var len = $(".p4").size();
+						//取到picture下的数字值
+						//把picture与数组一一对应的顺序进行追加到pic
+						for (var i = 0; i < arr.length; i++) {
+							for (var j = 0; j < len; j++) {
+								if (arr[i] == $(".p4").eq(j).text().substring(1)) {
+									// console.log(i+""+j);
+									$(".p4").eq(j).parents(".picture").appendTo(".pic");
+									break;
+								}
+							}
+						}
+					})
+					$('.picture').eq(0).click(function(){
+						location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/Show1.html')
+					})
+					$('.picture').eq(1).click(function(){
+						location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/Show1.html')
+					})
+					$('.picture').eq(2).click(function(){
+						location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/Show2.html')
+					})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<div class="container">
+				<img id="pic" src="img/手机页面标题.png" style="float: left;margin-top: 8px;margin-left: -20px;cursor: pointer;">
+				<ul>
+					<li>手机</li>
+					<li>笔记本电脑</li>
+					<li>平板&穿戴</li>
+					<li>智能家居</li>
+					<li>配件</li>
+					<li>企业购优惠</li>
+				</ul>
+				<input type="text" src="" style="width: 200px;height: 25px;border: 0;
+				background-color: #EEEEEE;margin-top: 27px;margin-left: 70px;border-radius: 20px;" />
+			</div>
+		</div>
+		<div class="yc">
+			<div class="container">
+				<div id="sj">
+					<span style="margin-left: 0;">全部手机</span>
+					<span style="color: #A9A9A9;margin-left: 20px;">></span>
+					<span>HUAWEI Mate系列</span>
+					<span>HUAWEI P 系列</span>
+					<span>HUAWEI nova系列</span>
+					<span>华为畅享系列</span>
+					<span style="display: block;width: 400px;">HUAWEI麦芒系列</span>
+					<div class="div1" style="margin-left: 0px;">
+						<img src="img/111.png">
+						<p class="p1">HUAWEI P40 Pro</p>
+						<p class="p2">￥6488</p>
+					</div>
+					<div class="div1">
+						<img src="img/222.png">
+						<p class="p1">HUAWEI P40</p>
+						<p class="p2">￥4488</p>
+					</div>
+					<div class="div1">
+						<img src="img/555.png">
+						<p class="p1">HUAWEI nova 7</p>
+						<p class="p2">￥3699</p>
+					</div>
+					<div class="div1">
+						<img src="img/666.png">
+						<p class="p1">华为畅享20</p>
+						<p class="p2">￥1488</p>
+					</div>
+					<div class="div1">
+						<img src="img/777.png">
+						<p class="p1">HUAWEI Mate Xs</p>
+						<p class="p2">￥16999</p>
+					</div>
+					<div class="div1">
+						<img src="img/888.png">
+						<p class="p1">HUAWEI 保时捷</p>
+						<p class="p2">￥12888</p>
+					</div>
+				</div>
+				<div id="dn">
+					<span style="margin-left: 0;">全部笔记本电脑</span>
+					<span style="color: #A9A9A9;margin-left: 20px;">></span>
+					<span>笔记本电脑</span>
+					<span style="display: block;width: 800px;">笔记本配件</span>
+					<div class="div1" style="margin-left: 0px;">
+						<img src="img/电脑1.png">
+						<p class="p1">HUAWEI MATEbook X</p>
+						<p class="p2">￥8999</p>
+					</div>
+					<div class="div1">
+						<img src="img/电脑5.png">
+						<p class="p1">HUAWEI MateBook 14</p>
+						<p class="p2">￥5999</p>
+					</div>
+					<div class="div1">
+						<img src="img/电脑6.png ">
+						<p class="p1">HUAWEI P40 Pro</p>
+						<p class="p2">￥6488</p>
+					</div>
+					<div class="div1">
+						<img src="img/电脑2.png">
+						<p class="p1">HUAWEI MateBook D</p>
+						<p class="p2">￥4199</p>
+					</div>
+					<div class="div1">
+						<img src="img/电脑3.png">
+						<p class="p1">HUAWEI P40</p>
+						<p class="p2">￥7988</p>
+					</div>
+					<div class="div1">
+						<img src="img/电脑4.png">
+						<p class="p1">HUAWE MateBook X 2020</p>
+						<p class="p2">￥7999</p>
+					</div>
+				</div>
+				<div id="pb">
+					<span style="margin-left: 0;">全部平板&穿戴</span>
+					<span style="color: #A9A9A9;margin-left: 20px;">></span>
+					<span>VR</span>
+					<span>平板电脑</span>
+					<span style="display: block;width: 700px;">手环/手表</span>
+					<div class="div1" style="margin-left: 10px;">
+						<img src="img/最后平白.png">
+						<p class="p1">华为平板M6 8英寸</p>
+						<p class="p2">￥1799</p>
+					</div>
+					<div class="div1">
+						<img src="img/2002.png">
+						<p class="p1">HUAWEI|WATCH GT2</p>
+						<p class="p2">￥1499</p>
+					</div>
+					<div class="div1">
+						<img src="img/电脑.png">
+						<p class="p1">华为M5青春版</p>
+						<p class="p2">￥3299</p>
+					</div>
+					<div class="div1">
+						<img src="img/手环.png">
+						<p class="p1">华为手环3 Pro</p>
+						<p class="p2">￥399</p>
+					</div>
+					<div class="div1">
+						<img src="img/最后手表.png">
+						<p class="p1">HUAWEI WATCH</p>
+						<p class="p2">￥2488</p>
+					</div>
+				</div>
+				<div id="jj">
+					<span style="margin-left: 0;">全部智能家居</span>
+					<span style="color: #A9A9A9;margin-left: 20px;">></span>
+					<span>路由器</span>
+					<span>子母/分布式路由</span>
+					<span>移动路由</span>
+					<span>照明</span>
+					<span>清洁</span>
+					<span>节能</span>
+					<span>环境</span>
+					<span>安防</span>
+					<span>健康</span>
+					<span>个护</span>
+					<span>厨电</span>
+					<span>影音</span>
+					<span>卫浴</span>
+					<span>出行</span>
+					<span>其他</span>
+					<div class="div1" style="margin-left: 0px;">
+						<img src="img/路由器1.png">
+						<p class="p1">华为路由器</p>
+						<p class="p2">￥799</p>
+					</div>
+					<div class="div1">
+						<img src="img/音响.png">
+						<p class="p1">华为AI音响</p>
+						<p class="p2">￥199</p>
+					</div>
+					<div class="div1">
+						<img src="img/保温杯.png">
+						<p class="p1">华为保温杯</p>
+						<p class="p2">￥299</p>
+					</div>
+					<div class="div1">
+						<img src="img/指纹锁.png">
+						<p class="p1">华为AI指纹锁</p>
+						<p class="p2">￥1499</p>
+					</div>
+					<div class="div1">
+						<img src="img/牙刷.png">
+						<p class="p1">华为超声波电动牙刷</p>
+						<p class="p2">￥299</p>
+					</div>
+					<div class="div1">
+						<img src="img/床头灯.png">
+						<p class="p1">欧普炫彩床头灯</p>
+						<p class="p2">￥299</p>
+					</div>
+				</div>
+				<div id="pj">
+					<span style="margin-left: 0;">全部配件</span>
+					<span style="color: #A9A9A9;margin-left: 20px;">></span>
+					<span>贴膜</span>
+					<span>保护壳</span>
+					<span>保护套</span>
+					<span>触控笔</span>
+					<span>表带</span>
+					<span>耳机</span>
+					<span>音箱</span>
+					<span>全景相机</span>
+					<span>电源/充电器/线材</span>
+					<span>自拍杆</span>
+					<span>存储</span>
+					<span>智能眼镜</span>
+					<span>智能硬件</span>
+					<div class="div1" style="margin-left: 0px;">
+						<img src="img/p40滚动栏7.png">
+						<p class="p1">超级快充移动电源</p>
+						<p class="p2">￥349</p>
+					</div>
+					<div class="div1">
+						<img src="img/最后2.png">
+						<p class="p1">HUAWEI Pro降噪耳机</p>
+						<p class="p2">￥1088</p>
+					</div>
+					<div class="div1">
+						<img src="img/颈部按摩器.png">
+						<p class="p1">HUAWEI超声波 颈部按摩器</p>
+						<p class="p2">￥1699</p>
+					</div>
+					<div class="div1">
+						<img src="./img/p40滚动栏10.png">
+						<p class="p1">华为畅享充电器</p>
+						<p class="p2">￥88</p>
+					</div>
+					<div class="div1">
+						<img src="img/p40滚动栏5.png">
+						<p class="p1">HUAWEI 无线耳机</p>
+						<p class="p2">￥399</p>
+					</div>
+					<div class="div1">
+						<img src="img/p40滚动栏2.png">
+						<p class="p1">硅胶手机壳</p>
+						<p class="p2">￥58</p>
+					</div>
+				</div>
+			</div>
+			<div id="yh"></div>
+		</div>
+		</div>
+		<div class="center">
+			<div class="container">
+				<div class="tittle">
+					<div class="tittle1">
+						<span>首页</span>
+						<span>></span>
+						<span>手机</span>
+					</div>
+					<div class="tittle2">
+						<div>
+							<span>分类：</span>
+							<span style="margin-left: 100px;">手机</span>
+						</div>
+						<div>
+							<span>价格区间：</span>
+							<span style="margin-left: 75px;">0-999</span>
+							<span>1000-1999</span>
+							<span>2000-3999</span>
+							<span>4000-5999</span>
+							<span>6000及以上</span>
+						</div>
+						<div>
+							<span>屏幕尺寸：</span>
+							<span style="margin-left: 75px;">6.0-6.5英寸</span>
+							<span>6.5英寸以上</span>
+						</div>
+						<div>
+							<span>排序：</span>
+							<span style="margin-left: 100px;">综合</span>
+							<span>最新</span>
+							<span>热度</span>
+							<span id="sp1">价格</span>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 照片 -->
+				<div class="pic">
+					<div class="picture">
+						<img src="img/777.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥16999</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/手机4.jpg">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥7999</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/手机2.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥1699</p>
+						<p class="p5"><span>商品赠券</span></p>
+					</div>
+					<div class="picture">
+						<img src="img/666.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥1999</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/2e0853c0-7adb-444b-8b59-19f12ae420d5.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥4999</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/333.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥2699</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/555.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥11399</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/手机.jpg">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥1999</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/9d80b9cb-f59e-4cd3-ac05-902886509377.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥2809</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/444.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥999</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/最后.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥2699</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/888.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥9999</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/最后3.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥4888</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/685470e4-51d9-42f0-9079-f8321c19a791.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥2889</p>
+						<p class="p5">赠送积分</p>
+					</div>
+					<div class="picture">
+						<img src="img/9d80b9cb-f59e-4cd3-ac05-902886509377.png">
+						<p class="p3">HUAWEI Mate Xs</p>
+						<p class="p4">￥6699</p>
+						<p class="p5">赠送积分</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fotter">
+			<div class="container">
+				<div class="fotter1">
+					<div style="margin-left: 0;">
+						<img src="img/奖牌.png" style="">
+						<p>百强企业 品质保证</p>
+					</div>
+					<div>
+						<img src="img/七天退换.png">
+						<p>7天退货 15天换货</p>
+					</div>
+					<div>
+						<img src="img/运费.png">
+						<p>48元起免运费</p>
+					</div>
+					<div>
+						<img src="img/定位.png">
+						<p>2000家服务店 全国联保</p>
+					</div>
+				</div>
+				<div class="fotter2">
+					<div style="margin-left: 0px;">
+						<p style="font-size: 17px;color: #000000;">购物相关</p>
+						<p style="margin-top: 15px;">购物指南</p>
+						<p>配送方式</p>
+						<p>支付方式</p>
+						<p>常见问题</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">保修与退换货</p>
+						<p style="margin-top: 15px;">保修政策</p>
+						<p>退换货政策</p>
+						<p>退换货流程</p>
+						<p>保修状态查询</p>
+						<p>配件防伪查询</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">维修与技术支持</p>
+						<p style="margin-top: 15px;">服务店</p>
+						<p>预约维修</p>
+						<p>手机寄修</p>
+						<p>备件价格查询</p>
+						<p>上门服务</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">特色服务</p>
+						<p style="margin-top: 15px;">防伪查询</p>
+						<p>补购保障</p>
+						<p>以旧换新</p>
+						<p>礼品包装</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">关于我们</p>
+						<p style="margin-top: 15px;">公司介绍</p>
+						<p>华为商城简介</p>
+						<p>华为零售店</p>
+						<p>荣耀零售店</p>
+						<p>商家中心</p>
+						<p>意见反馈</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">友情链接</p>
+						<p style="margin-top: 15px;">华为集团</p>
+						<p>华为CBG官网</p>
+						<p>荣耀官网</p>
+						<p>花粉俱乐部</p>
+						<p>华为云</p>
+					</div>
+					<div style="text-align: center;margin-left: 45px; border-left: 1px #A9A9A9 solid;padding: 30px;height: 80px;">
+						<p style="color: #575757;font-size: 25px;font-weight: 800;margin-top: -30px;">950805</p>
+						<p style="margin-top: 10px;">7×24小时客服热线（仅收市话费）</p>
+						<p style="background-color: #000000;color: white;border-radius: 20px;
+								height: 30px;width: 150px;font-size: 18px;line-height: 30px;text-align: center;
+								margin-left: 35px;margin-top: 20px;">在线客服</p>
+						<p style="margin-top: 10px;">关于Vmall：</p>
+					</div>
+				</div>
+				<div class="footer3" style="margin-top: 30px;">
+					<img src="img/手机页底部png.png" style="height: 20px;float: left;">
+					<p style="float: left;color: #A9A9A9;font-size: 13px;margin-left: 1.25rem;">
+						华为集团 | 华为CBG官网 | 荣耀官网 | 花粉俱乐部 | 华为应用市场 | EMUI | 华为终端云空间 | 开发者联盟 | 华为商城手机版 | 网站地图 <br>隐私声明 服务协议 COOKIES Copyright
+						© 2012-2020 华为终端有限公司 版权所有 粤ICP备19015064号|粤公网安备 44190002003939号
+						<br>增值电信业务经营许可证：粤B2-20190762|备案主体编号：44201919072182</p>
+					<img src="img/营业执照.png" style="margin-left: 1100px;float: left;">
+				</div>
+			</div>
+		</div>
+		</div>
+		<div style="position: fixed;height: 135px;width: 40px;background-color: white;right: 50px;
+		top: 750px;">
+			<i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 35px;color: #A9A9A9;"></i>
+			<br>
+			<br>
+			<i class="fa fa-headphones" aria-hidden="true" style="color: #A9A9A9; font-size: 30px;margin-left: 0.3125rem;"></i>
+			<br>
+			<br>
+			<i class="fa fa-heart" aria-hidden="true" style="color: #A9A9A9; font-size: 28px;margin-left: 0.3125rem;"></i>
+		</div>
+		<div id="guc" style="position: fixed;right: 100px;top: 750px;color: #A9A9A9;background-color: white;height: 30px;width: 80px;
+			text-align: center;line-height: 30px;display: none;">购物车</div>
+		<div id="kf" style="position: fixed;right: 100px;top: 807px;color: #A9A9A9;background-color: white;height: 30px;width: 80px;
+			text-align: center;line-height: 30px;display: none;">在线客服</div>
+		<div id="fw" style="position: fixed;right: 100px;top: 857px;color: #A9A9A9;background-color: white;height: 30px;width: 80px;
+			text-align: center;line-height: 30px;display: none;">自助服务</div>
+	</body>
+</html>

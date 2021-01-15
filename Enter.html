@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.top {
+				height: 50px;
+				background-color: #F2F2F2;
+			}
+
+			.center {
+				height: 660px;
+			}
+
+			.left img {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+			}
+
+			.left p {
+				font-size: 10px;
+				margin: 50px 532px;
+			}
+			.right input {
+				height: 20px;
+				width: 400px;
+				background-color: #F2F2F2;
+				border: 0px;
+				border-radius: 0.625rem;
+			}
+
+			.right {
+				border-left: 1px solid #A9A9A9;
+				height: 300px;
+				width: 500px;
+				left: 960px;
+				margin-top: 6.25rem;
+			}
+
+			span {
+				margin-left: 15px;
+			}
+
+			.bottom p {
+				float: left;
+				margin-left: 10px;
+				margin-top: 40px;
+				font-size: 13px;
+			}
+			.bot p{
+				float: left;
+			}
+			.div1 span{
+				cursor: pointer;
+			}
+			input{
+				outline:none;
+				padding: 15px;
+			}
+			.tb img{
+				height: 30px;
+				margin-left: 70px;
+				cursor: pointer;
+			}
+		</style>
+		<script src="js/通用类.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				$('.gb').onclick = function(){
+					$('.bot').css('display','none')
+				}
+				$('#sp1').onclick = function(){
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/login.html')
+				}
+				$('#sp2').onclick = function(){
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/password.html')
+				}
+				$('#sp3').onclick = function(){
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/question.html')
+				}
+				
+				$('#input1').onblur = function(){
+					if ($('#input1').value == 's123456') {
+							$('#p1').innerHTML = '';
+							$('#p1').style.color = 'red';
+						} else {
+							$('#p1').innerHTML = '该账号没有被注册';
+							$('#p1').style.color = 'red';
+						}
+					}
+					$('#input2').onblur = function(){
+						if ($('#input2').value == 123456) {
+								$('#p2').innerHTML = '密码正确';
+								$('#p2').style.color = 'green';
+							} else {
+								$('#p2').innerHTML = '密码错误';
+								$('#p2').style.color = 'red';
+							}
+						}
+							$('#denglu').onclick = function(){
+								if($('#input1').value == 's123456' && $('#input2').value == '123456'){
+								location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/My%20Center.html')
+							}
+						}
+						
+			}
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<img src="img/华为票提.jpg" style="width: 150px;height: 50px;margin-left: 300px;float: left;">
+			<div style="font-size: 20px;font-weight: 100;color: #A9A9A9;margin-left: 0px;float: left;margin-top: 11px;">|</div>
+			<div style="font-size: 20px;font-weight: 700;float: left;line-height: 3.125rem;margin-left: 20px;">华为商城</div>
+		</div>
+		<div class="center">
+			<p style="text-align: center;margin-top: 100px;font-size: 35px;margin-left: 5px;">华为账号登录</p>
+			<div class="left" style="float: left;">
+				<div style="height: 200px;width: 200px;background-color: #F2F2F2;margin-left: 600px;margin-top: 100px;position: relative;">
+					<img src="img/二维码.png">
+				</div>
+				<p>若您使用华为手机，请进入“设置” > “华为账号” 扫码登录</p>
+			</div>
+			<div class="right" style="position: relative;">
+				<input type="text" name="" id="input1" value="" placeholder="手机号/邮箱地址/华为号" style="position: absolute;top: 0px; left: 50px;" />
+				<p id="p1"style="font-size: 13px;position: absolute;left: 80px;top: 55px;"></p>
+				<input type="password" name="" id="input2" value="" placeholder="密码" style="position: absolute;top: 80px; left: 50px;" />
+				<p id="p2"style="font-size: 13px;position: absolute;left: 80px;top: 140px;"></p>
+				<p style="position: absolute;top: 160px;left: 50px;color: royalblue;">短信验证码登录</p>
+				<div id="denglu" style="position: absolute;top: 200px;left: 50px;background-color: #FF0000;color: white;height: 50px;width: 400px;font-size: 30px;font-weight: 700;border-radius: 10px;
+				border: 0;text-align: center;line-height: 50px;cursor: pointer;">登录</div>
+			</div>
+			<div class="div1" style="color: royalblue;font-size: 17px;position: absolute;left: 1080px;">
+				<span id="sp1">注册</span>
+				<span style="color: #A9A9A9;">|</span>
+				<span id="sp2">忘记密码</span>
+				<span style="color: #A9A9A9;">|</span>
+				<span id="sp3">遇到问题</span>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div class="bottom"style="height: 120px;">
+			<div class="top1" style="background-color: #F2F2F2;height: 127px;">
+				<p style="margin-left: 680px;">华为账号与云空间用户协议</p>
+				<p style="color: #A9A9A9;">|</p>
+				<p>关于华为账号与云空间隐私的说明</p>
+				<p style="color: #A9A9A9;">|<p>
+						<p>常见问题</p>
+						<p style="color: #A9A9A9;">|</p>
+						<p>Cookies</p>
+						<div style="clear: both;"></div>
+						<div style="margin-left: 880px;font-size: 12px;color: #A9A9A9;margin-top: 10px;">华为账号 版权所有 2011-2020</div>
+			</div>
+		
+		</div>
+		<div class="tb" style="position: absolute;top: 660px;left: 1030px;">
+			<img src="img/qq.png" >
+			<img src="img/微信.png" >
+			<img src="img/微博.png" >
+		</div>
+	</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				/* list-style: none; */
+			}
+			
+			.top {
+				height: 50px;
+				background-color: #F2F2F2;
+			}
+			.center{
+				height: 600px;
+				width: 900px;
+				background-color: white;
+				margin-left: 500px;
+			}
+			.left{
+				width: 200px;
+				height: 600px;
+				border-right: #EEEEEE 1px solid;
+					float: left;
+			}
+			.left div{
+				height: 80px;
+				border-bottom: #EEEEEE 1px solid;
+				color: #A9A9A9;
+				font-size: 20px;
+				line-height: 80px;
+			
+			}
+			.left div span{
+				margin-left: 40px;
+			}
+			.right{
+				width: 699px;
+				height: 600px;
+				float: right;
+				
+			}
+			.right .p1{
+				font-size: 18px;
+				margin-top: 20px;
+				margin-left: 30px;
+			}
+			.right ul{
+				font-size: 13px;
+				margin-top: 10px;
+				color: #A9A9A9;
+				margin-left: 50px;
+			}
+			.right .p2{
+				font-size: 13px;
+				margin-top: 40px;
+				margin-left: 40px;
+			}
+			.right .p3{
+				font-size: 15px;
+				margin-top: 40px;
+				background-color: #eee;
+				height: 1.875rem;
+				line-height: 1.875rem;
+			}
+			.bottom p {
+				float: left;
+				margin-left: 10px;
+				margin-top: 40px;
+				font-size: 13px;
+			}
+			.right1{
+				width: 699px;
+				height: 600px;
+				float: right;
+				display: none;
+			}
+			.right1 p{
+				font-size: 18px;
+				margin-top: 20px;
+				margin-left: 30px;
+			}
+			input{
+				outline:none;
+			}
+		</style>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#tittle').click(function(){
+					$('#tittle').css(
+					{
+						'background': '#F2F8FF',
+						'border-bottom': '1px solid #99CBFF'
+						}
+					)
+					$('#tittle1').css(
+					{
+						'background': 'white',
+						'border-bottom': '1px solid #eee'
+						}
+					)
+					$('.right1').css('display','none')
+					$('.right').css('display','block')
+				})
+				$('#tittle1').click(function(){
+					$('#tittle1').css(
+					{
+						'background': '#F2F8FF',
+						'border-bottom': '1px solid #99CBFF'
+						}
+					)
+					$('#tittle').css(
+					{
+						'background': 'white',
+						'border-bottom': '1px solid #eee'
+						}
+					)
+					$('.right').css('display','none')
+					$('.right1').css('display','block')
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<img src="img/华为票提.jpg" style="width: 150px;height: 50px;margin-left: 490px;float: left;">
+			<div style="font-size: 20px;font-weight: 100;color: #A9A9A9;margin-left: 0px;float: left;margin-top: 11px;">|</div>
+			<div style="font-size: 20px;font-weight: 700;float: left;line-height: 3.125rem;margin-left: 10px;">华为商城</div>
+		</div>
+		<div style="height: 600px;background-color: #F2F2F2;">
+			<div class="center">
+				<div class="left">
+					<div id="tittle" style="cursor: pointer;"><span>自助申诉</span></div>
+					<div  id="tittle1" style="cursor: pointer;"><span>查询申诉进度</span></div>
+				</div>
+				<div class="right">
+					<p class="p1">申诉须知:</p>
+					<ul>
+						<li>申诉范围包括更改华为帐号、安全手机号、安全邮件地址</li>
+						<li>审核结果最快 15 分钟内发送到您设置的新手机号或邮件地址，最慢在 3 个工作日内发送</li>
+						<li>申诉申请提交后，请记录下申诉单号，随时到“查询申诉进度”了解申诉结果</li>
+					</ul>
+					<p class="p2">在经常使用设备上填写尽可能完整的申诉信息，有利于申诉成功。</p>
+					<p class="p3"><span style="margin-left: 50px;">输入华为账号</span></p>
+					<input type="" name="" id="" value="" placeholder="  手机号/邮件号/华为号" style="height: 50px;width: 350px;border-radius: 20px;border: 0;background-color: #EEEEEE;margin-top: 30px;margin-left: 30px;"/>
+					<div style="border: 1px solid #6495ED;border-radius: 20px;height: 50px; width: 250px;font-size: 20px;text-align: center;line-height: 50px;margin-top: 30px;background-color: #EEEEEE;color: white;margin-left: 35px;"> 开始申诉</div>
+				</div>
+				<div class="right1">
+					<p>输入华为账号和申诉单号</p>
+					<div>
+						<span style="margin-left: 80px;">账号</span>
+						<input type="" name="" id="" value="" placeholder="  手机号/邮件号/华为号" style="height: 40px;width: 350px;border-radius: 20px;border: 0;background-color: #EEEEEE;margin-top: 30px;margin-left: 30px;"/>
+					</div>
+					<div>
+						<span style="margin-left: 47px;">申诉单号</span>
+						<input type="" name="" id="" value="" placeholder="  手机号/邮件号/华为号" style="height: 40px;width: 350px;border-radius: 20px;border: 0;background-color: #EEEEEE;margin-top: 30px;margin-left: 30px;"/>
+					</div>
+					<div style="height: 50px; width: 200px; background-color: #CCE5FF; border-radius: 1.25rem;line-height: 50px;text-align: center;color: white;margin-left: 150px;margin-top: 80px;">下一步</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom"style="height: 100px;">
+			<div class="top1" style="background-color: #F2F2F2;height: 127px;">
+				<p style="margin-left: 680px;color: #A9A9A9;">华为账号与云空间用户协议</p>
+				<p style="color: #A9A9A9;">|</p>
+				<p style="color: #A9A9A9;">关于华为账号与云空间隐私的说明</p>
+				<p style="color: #A9A9A9;">|<p>
+						<p style="color: #A9A9A9;">常见问题</p>
+						<p style="color: #A9A9A9;">|</p>
+						<p style="color: #A9A9A9;">Cookies</p>
+						<div style="clear: both;"></div>
+						<div style="margin-left: 880px;font-size: 12px;color: #A9A9A9;margin-top: 10px;">华为账号 版权所有 2011-2020</div>
+			</div>
+			<div style="height: 160px;background-color: #F2F2F2;"></div>
+	</body>
+</html>

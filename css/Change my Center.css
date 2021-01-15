@@ -1,0 +1,93 @@
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.container {
+	margin: auto;
+	width: 1200px;
+}
+
+.tittle {
+	height: 50px;
+}
+
+.center {
+	background-color: #EEEEEE;
+	height: 800px;
+}
+
+.left {
+	float: left;
+	width: 300px;
+	color: #666666;
+	margin-left: 30px;
+}
+
+.left ul li {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.left p {
+	margin-left: 80px;
+	height: 50px;
+	width: 200px;
+	line-height: 50px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+
+.left p:hover {
+	background-color: #6495ED;
+	cursor: pointer;
+}
+
+.left p span {
+	margin-left: 20px;
+}
+
+.right {
+	width: 400px;
+	float: left;
+	margin-left: 350px;
+	margin-top: 50px;
+}
+
+.right ul li {
+	float: left;
+	color: #666666;
+	height: 80px;
+	line-height: 80px;
+}
+
+input {
+	border: 0;
+	padding: 10px;
+	width: 265px;
+	margin-left: 80px;
+	border-radius: 10px;
+	outline: none;
+}
+
+select {
+	border: 0;
+	padding: 10px;
+	width: 285px;
+	margin-left: 80px;
+	border-radius: 10px;
+	color: #666666;
+	outline: none;
+}
+
+.bottom p {
+	float: left;
+	margin-left: 10px;
+	margin-top: 40px;
+	font-size: 13px;
+}
+
+.bot p {
+	float: left;
+}

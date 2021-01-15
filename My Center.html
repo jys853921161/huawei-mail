@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="css/My%20Center.css"/>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#wdthh').click(function() {
+					$('.xxk1').css('display', 'none')
+					$('.xxk3').css('display', 'block')
+					$('.xxk2').css('display', 'none')
+				})
+				$('#wddd').click(function() {
+					$('.xxk1').css('display', 'block')
+					$('.xxk3').css('display', 'none')
+					$('.xxk2').css('display', 'none')
+				})
+				$('#wdjf').click(function() {
+					$('.xxk1').css('display', 'none')
+					$('.xxk3').css('display', 'none')
+					$('.xxk2').css('display', 'block')
+				})
+				$('#p1').click(function() {
+					$('.thh').css('display', 'block')
+					$('#p1').css('border-bottom', '1px solid red')
+					$('.thh1').css('display', 'none')
+					$('#p2').css('border-bottom', '0')
+				})
+				$('#p2').click(function() {
+					$('.thh1').css('display', 'block')
+					$('#p2').css('border-bottom', '1px solid red')
+					$('.thh').css('display', 'none')
+					$('#p1').css('border-bottom', '0')
+				})
+				$('i').eq(0).mouseover(function() {
+					$('#guc').stop().show(300, function() {
+						$('#guc').css('display', 'block')
+					})
+				})
+				$('i').eq(0).mouseout(function() {
+					$('#guc').stop().hide(300, function() {
+						$('#guc').css('display', 'none')
+					})
+				})
+				$('i').eq(1).mouseover(function() {
+					$('#kf').stop().show(300, function() {
+						$('#kf').css('display', 'block')
+					})
+				})
+				$('i').eq(1).mouseout(function() {
+					$('#kf').stop().hide(300, function() {
+						$('#kf').css('display', 'none')
+					})
+				})
+				$('i').eq(2).mouseover(function() {
+					$('#fw').stop().show(300, function() {
+						$('#fw').css('display', 'block')
+					})
+				})
+				$('i').eq(2).mouseout(function() {
+					$('#fw').stop().hide(300, function() {
+						$('#fw').css('display', 'none')
+					})
+				})
+				$('#sjy').click(function() {
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/phone.html')
+				})
+				$('#zhzx').click(function() {
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/Change%20my%20Center.html')
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<div class="container">
+				<img id="pic" src="img/手机页面标题.png" style="float: left;margin-top: 8px;margin-left: -20px;cursor: pointer;">
+				<ul>
+					<li id="sjy">全部商品分类</li>
+					<li style="color: white;background-color:#FF8486;height: 40px;margin-top: 20px;line-height: 40px;border-radius: 10px;">华为专区</li>
+					<li style="color: white;background-color:#74C7FF;height: 40px;margin-top: 20px;line-height: 40px;border-radius: 10px;">荣耀专区</li>
+					<li>P40</li>
+					<li>荣耀30</li>
+					<li>智能家居</li>
+				</ul>
+				<input type="text" src="" style="width: 200px;height: 25px;border: 0;
+				background-color: #EEEEEE;margin-top: 27px;margin-left: 70px;border-radius: 20px;" />
+			</div>
+		</div>
+		<div class="center">
+			<div class="container">
+				<div class="tittle">
+					<span style="margin-left: 0;"><a href="http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/Home.html">首页</a></span>
+					<span>></span>
+					<span>我的商城</span>
+				</div>
+				<div class="left">
+					<ul>
+						<li style="border: 0;">
+							<h3 style="color: #DC143C;font-weight: 500;margin-top: 0px;margin-left: 30px;">我的商城</h3>
+						</li>
+						<li>
+							<p class="p1">我的消息</p>
+							<p>消息中心</p>
+							<p>活动推送</p>
+						</li>
+						<li>
+							<p class="p1">订单中心</p>
+							<p id="wddd">我的订单</p>
+							<p id="wdthh">我的退换货</p>
+							<p>我的回收单</p>
+							<p>商品评价</p>
+						</li>
+						<li>
+							<p class="p1">我的资产</p>
+							<p id="wdjf">我的积分</p>
+							<p>我的优惠券</p>
+							<p>我的代金券</p>
+							<p>我的花瓣</p>
+							<p>等级与特权</p>
+						</li>
+						<li>
+							<p class="p1">购买支持</p>
+							<p>收货地址管理</p>
+							<p>实名认证</p>
+							<p>我的预约</p>
+							<p>到货通知</p>
+							<p>我的优享购</p>
+						</li>
+						<li>
+							<p class="p1">帮助中心</p>
+						</li>
+					</ul>
+				</div>
+				<div class="right">
+					<div class="top1">
+						<img src="img/头像.jpg" style="border-radius: 50%;width: 100px;height: 100px;margin-top: 50px;
+						margin-left: 50px;float: left;">
+						<ul style="float: left;margin-left: 50px;margin-top: 50px;">
+							<li style="font-size: 20px;">J******</li>
+							<li style="margin-top: 10px;">
+								<img src="img/个人中心小图标.png" style="margin-left: -10px;float: left;">
+								<p style="float: left;margin-top: 8px;margin-left: 20px;font-size: 12px;">0/100</p>
+								<div style="clear: both;"></div>
+							</li>
+							
+							<li style="margin-top: 15px;">
+								<div class="hy" style="width: 80px;float: left;text-align: center;background-color: #595454;color: #FDE4B3;
+								height: 30px;line-height: 30px;border-radius: 10px;font-size: 13px;cursor: pointer;">会员权益</div>
+								<div id="zhzx" style="width: 80px;float: left;text-align: center;height: 30px;line-height: 30px;border-radius: 10px;
+								border: 1px solid #A9A9A9;margin-left: 20px;;font-size: 13px;cursor: pointer;">账号中心</div>
+								<div style="clear: both;"></div>
+							</li>
+							
+						</ul>
+						<ul style="margin-left: 150px;text-align: center;margin-top: 50px;">
+							<h1>0</h1>
+							<p style="font-size: 13px;margin-top: 10px;">积分</p>
+							<p style="font-size: 13px;margin-top: 15px;border: 1px solid #666666;border-radius: 20px;width: 50px;">去查看</p>
+						</ul>
+						<ul style="margin-left: 70px;text-align: center;margin-top: 50px;">
+							<h1>0</h1>
+							<p style="font-size: 13px;margin-top: 10px;">优惠券</p>
+							<p style="font-size: 13px;margin-top: 15px;border: 1px solid #666666;border-radius: 20px;width: 50px;">去查看</p>
+						</ul>
+						<ul style="margin-left: 70px;text-align: center;margin-top: 50px;">
+							<h1>0.00</h1>
+							<p style="font-size: 13px;margin-top: 10px;">代金券</p>
+							<p style="font-size: 13px;margin-top: 15px;border: 1px solid #666666;border-radius: 20px;width: 50px;margin-left: 10px;">去查看</p>
+						</ul>
+						<ul style="margin-left: 70px;text-align: center;margin-top: 50px;">
+							<h1>0</h1>
+							<p style="font-size: 13px;margin-top: 10px;">花瓣</p>
+							<p style="font-size: 13px;margin-top: 15px;border: 1px solid #666666;border-radius: 20px;width: 50px;">去查看</p>
+						</ul>
+					</div>
+					<div class="center1">
+						<!-- 选项卡 -->
+						<div class="left1">
+							<div class="xxk1">
+								<div>
+									<p style="float: left;margin-top: 20px;margin-left: 20px;color: #111;font-size: 16px;">我的订单</p>
+									<p style="float: left;margin-top: 20px;margin-left: 430px;">全部订单></p>
+									<div style="clear: both;"></div>
+								</div>
+								
+								<ul style="margin-top: 30px;">
+									<li style="margin-left: 50px;">
+										<img src="img/代付款.png">
+										<p>待付款</p>
+									</li>
+									<li>
+										<img src="img/待收货.png">
+										<p>待收货</p>
+									</li>
+									<li>
+										<img src="img/待评价.png">
+										<p>带评价</p>
+									</li>
+									<li>
+										<img src="img/退换货.png">
+										<p>退换货</p>
+									</li>
+									<li>
+										<img src="img/小程序.png">
+										<p>小程序</p>
+									</li>
+									<div style="clear: both;"></div>
+								</ul>
+								
+								<div style="text-align: center;border-top: 1px #EEEEEE solid;margin-top: 20px;">
+									<img src="img/查找.png" style="height: 100px;width: 100px;margin-top: 40px;">
+									<p style="margin-top: 30px;">当前无近期订单，前往<a href="http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/%E4%B8%BB%E9%A1%B5.html"
+										 style="color: #DC143C;">首页</a>选购吧</p>
+								</div>
+							</div>
+							<div class="xxk2">
+								<p style="float: left;margin-top: 20px;margin-left: 20px;color: #111;font-size: 16px;">我的积分</p>
+								<div style="clear: both;"></div>
+								<ul style="margin-top: 80px; font-size: 13px;">
+									<li style="margin-left: 50px;">
+										<p>可用积分</p>
+										<h1 style="color: #DC143C;font-size: 80px;">0</h1>
+									</li>
+									<li style="margin-left: 150px;">
+										<p>可抵现金</p>
+										<h1 style="color: #DC143C;font-size: 80px;">0</h1>
+									</li>
+									<li style="margin-left: 90px;">
+										<p>
+											<span>将要过期的积分:</span>
+											<span style="color: #DC143C;">(2020-12-31)</span>
+											<h1 style="color: #DC143C;font-size: 80px;">0</h1>
+										</p>
+									</li>
+								</ul>
+							</div>
+							<div class="xxk3">
+								<p style="float: left;margin-top: 20px;margin-left: 20px;color: #111;font-size: 16px;">我的退换货</p>
+								<div style="clear: both;"></div>
+								<p id="p1" style="margin-top: 30px;">申请退换货</p>
+								<p id="p2" style="margin-top: 30px;margin-left: 50px;">退换货记录</p>
+								<p style="font-size: 12px;margin-top: 30px;margin-left: 230px;color: #6495ED;">
+									<span>退换货流程 |</span>
+									<span>退换货政策</span>
+								</p>
+								<div style="clear: both;"></div>
+								<div class="thh" style="height: 100px;margin-top: 80px;text-align: center;background-color: #EEEEEE;
+								font-size: 18px;">
+									<p style="margin-left: 20px;">订单信息</p>
+									<p>数量</p>
+									<p>实付总额</p>
+									<p>操作</p>
+								</div>
+								<div class="thh1">
+									<p class="p3" style="height: 30px;line-height: 30px;
+									width: 100px;text-align: center;">最近退换货</p>
+									<p class="p4" style="margin-left: 50px;height: 30px;line-height: 30px;
+									width: 100px;text-align: center;">六个月以前</p>
+									<div style="clear: both;"></div>
+									<div style="margin-top: 40px;background-color: #EEEEEE;height: 100px;font-size: 17px;line-height: 60px;">
+										<p style="margin-left: 50px;">退换货订单信息</p>
+										<p style="margin-left: 130px;">状态</p>
+										<p style="margin-left: 130px;">操作</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 选项卡^^^^^^^^^^^^^^^^^^^^^^^6 -->
+						<div class="left2">
+							<p style="margin-top: 20px;margin-left: 20px;float: left;">为你推荐</p>
+							<div style="clear: both;"></div>
+							<img src="img/个人中心1.png">
+							<img src="img/个人中心2.jpg">
+							<img src="img/个人中心3.jpg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="right1">
+			<img src="img/个人中心4.png">
+			<div style="color: #222222;font-size: 17px;background-color: white;width: 380px;
+			border-radius: 10px;height: 220px;margin-top: 20px;">
+				<p style="float: left;margin: 20px;">我的服务</p>
+				<div style="clear: both;"></div>
+				<ul>
+					<li>
+						<img src="img/以旧换新.png" style="background-color: #79DDD7">
+						<p>以旧换新</p>
+					</li>
+					<li>
+						<img src="img/保障.png" style="background-color: #FEA66C">
+						<p>补够保障</p>
+					</li>
+					<li>
+						<img src="img/客服.png" style="background-color: #9D9EEF">
+						<p>联系客服</p>
+					</li>
+				</ul>
+			</div>
+			<img src="img/个人中心5.png">
+		</div>
+		<div class="fotter">
+			<div class="container">
+				<div class="fotter1">
+					<div style="margin-left: 0;">
+						<img src="img/奖牌.png" style="">
+						<p>百强企业 品质保证</p>
+					</div>
+					<div>
+						<img src="img/七天退换.png">
+						<p>7天退货 15天换货</p>
+					</div>
+					<div>
+						<img src="img/运费.png">
+						<p>48元起免运费</p>
+					</div>
+					<div>
+						<img src="img/定位.png">
+						<p>2000家服务店 全国联保</p>
+					</div>
+				</div>
+				<div class="fotter2">
+					<div style="margin-left: 0px;">
+						<p style="font-size: 17px;color: #000000;">购物相关</p>
+						<p style="margin-top: 15px;">购物指南</p>
+						<p>配送方式</p>
+						<p>支付方式</p>
+						<p>常见问题</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">保修与退换货</p>
+						<p style="margin-top: 15px;">保修政策</p>
+						<p>退换货政策</p>
+						<p>退换货流程</p>
+						<p>保修状态查询</p>
+						<p>配件防伪查询</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">维修与技术支持</p>
+						<p style="margin-top: 15px;">服务店</p>
+						<p>预约维修</p>
+						<p>手机寄修</p>
+						<p>备件价格查询</p>
+						<p>上门服务</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">特色服务</p>
+						<p style="margin-top: 15px;">防伪查询</p>
+						<p>补购保障</p>
+						<p>以旧换新</p>
+						<p>礼品包装</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">关于我们</p>
+						<p style="margin-top: 15px;">公司介绍</p>
+						<p>华为商城简介</p>
+						<p>华为零售店</p>
+						<p>荣耀零售店</p>
+						<p>商家中心</p>
+						<p>意见反馈</p>
+					</div>
+					<div>
+						<p style="font-size: 17px;color: #000000;">友情链接</p>
+						<p style="margin-top: 15px;">华为集团</p>
+						<p>华为CBG官网</p>
+						<p>荣耀官网</p>
+						<p>花粉俱乐部</p>
+						<p>华为云</p>
+					</div>
+					<div style="text-align: center;margin-left: 45px; border-left: 1px #A9A9A9 solid;padding: 30px;height: 80px;">
+						<p style="color: #575757;font-size: 25px;font-weight: 800;margin-top: -30px;">950805</p>
+						<p style="margin-top: 10px;">7×24小时客服热线（仅收市话费）</p>
+						<p style="background-color: #000000;color: white;border-radius: 20px;
+							height: 30px;width: 150px;font-size: 18px;line-height: 30px;text-align: center;
+							margin-left: 35px;margin-top: 20px;">在线客服</p>
+						<p style="margin-top: 10px;">关于Vmall：</p>
+					</div>
+				</div>
+				<div class="footer3" style="margin-top: 30px;">
+					<img src="img/手机页底部png.png" style="height: 20px;float: left;">
+					<p style="float: left;color: #A9A9A9;font-size: 13px;margin-left: 1.25rem;">
+						华为集团 | 华为CBG官网 | 荣耀官网 | 花粉俱乐部 | 华为应用市场 | EMUI | 华为终端云空间 | 开发者联盟 | 华为商城手机版 | 网站地图 <br>隐私声明 服务协议 COOKIES Copyright
+						© 2012-2020 华为终端有限公司 版权所有 粤ICP备19015064号|粤公网安备 44190002003939号
+						<br>增值电信业务经营许可证：粤B2-20190762|备案主体编号：44201919072182</p>
+					<img src="img/营业执照.png" style="margin-left: 1100px;float: left;">
+				</div>
+			</div>
+		</div>
+		<div style="position: fixed;height: 135px;width: 40px;background-color: white;right: 50px;
+	top: 750px;">
+			<i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 35px;color: #A9A9A9;"></i>
+			<br>
+			<br>
+			<i class="fa fa-headphones" aria-hidden="true" style="color: #A9A9A9; font-size: 30px;margin-left: 0.3125rem;"></i>
+			<br>
+			<br>
+			<i class="fa fa-heart" aria-hidden="true" style="color: #A9A9A9; font-size: 28px;margin-left: 0.3125rem;"></i>
+		</div>
+		<div id="guc" style="position: fixed;right: 100px;top: 750px;color: #A9A9A9;background-color: white;height: 30px;width: 80px;
+		text-align: center;line-height: 30px;display: none;">购物车</div>
+		<div id="kf" style="position: fixed;right: 100px;top: 807px;color: #A9A9A9;background-color: white;height: 30px;width: 80px;
+		text-align: center;line-height: 30px;display: none;">在线客服</div>
+		<div id="fw" style="position: fixed;right: 100px;top: 857px;color: #A9A9A9;background-color: white;height: 30px;width: 80px;
+		text-align: center;line-height: 30px;display: none;">自助服务</div>
+	</body>
+</html>

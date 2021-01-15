@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>华为</title>
+		<link rel="stylesheet" type="text/css" href="css/Home.css"/>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(window).scroll(function() {
+					if ($(window).scrollTop() > 600) {
+						$('#dhl').css('display', 'block')
+					} else {
+						$('#dhl').css('display', 'none')
+					}
+				})
+				$('.li1').click(function() {
+					window.scroll(0, 1020);
+				})
+				$('.li2').click(function() {
+					window.scroll(0, 2500);
+				})
+				$('.li3').click(function() {
+					window.scroll(0, 3620);
+				})
+				$('.li4').click(function() {
+					window.scroll(0, 4680);
+				})
+				$('.li5').click(function() {
+					window.scroll(0, 0);
+				})
+				$('.li6').click(function() {
+					window.scroll(0, 5790);
+				})
+
+				// 轮播图
+				var timer = setInterval(picLoop, 3000);
+				var index = 0;
+
+				function picLoop() {
+					index++;
+					if (index == 6) {
+						index = 0;
+					}
+					$(".bcpic1").animate({
+						"left": -1920 * index
+					}, 800);
+				}
+
+				$('.li11').click(function() {
+					$('.gdt1').animate({
+						top: 0
+					}, 500)
+				})
+				$('.li22').click(function() {
+					$('.gdt1').animate({
+						top: -200
+					}, 500)
+				})
+				$('.li33').click(function() {
+					$('.gdt1').animate({
+						top: -400
+					}, 500)
+				})
+				$('.li44').click(function() {
+					$('.gdt1').animate({
+						top: -600
+					}, 500)
+				})
+				$('button').eq(0).mouseover(function() {
+					$('.bcpic1').animate({
+						left: 0
+					}, 1000);
+					clearInterval(timer);
+				})
+				$('button').eq(0).mouseout(function() {
+					timer = setInterval(picLoop, 3000);
+				})
+				$('button').eq(1).mouseover(function() {
+					$('.bcpic1').animate({
+						left: -1920
+					}, 1000);
+					clearInterval(timer);
+				})
+				$('button').eq(1).mouseout(function() {
+					timer = setInterval(picLoop, 3000);
+				})
+				$('button').eq(2).mouseover(function() {
+					$('.bcpic1').animate({
+						left: -3840
+					}, 1000);
+					clearInterval(timer);
+				})
+				$('button').eq(2).mouseout(function() {
+					timer = setInterval(picLoop, 3000);
+				})
+				$('button').eq(3).mouseover(function() {
+					$('.bcpic1').animate({
+						left: -5760
+					}, 1000);
+					clearInterval(timer);
+				})
+				$('button').eq(3).mouseout(function() {
+					timer = setInterval(picLoop, 3000);
+				})
+				$('button').eq(4).mouseover(function() {
+					$('.bcpic1').animate({
+						left: -7680
+					}, 1000);
+					clearInterval(timer);
+				})
+				$('button').eq(4).mouseout(function() {
+					timer = setInterval(picLoop, 3000);
+				})
+				$('button').eq(5).mouseover(function() {
+					$('.bcpic1').animate({
+						left: -9600
+					}, 1000);
+					clearInterval(timer);
+				})
+				$('button').eq(5).mouseout(function() {
+					timer = setInterval(picLoop, 3000);
+				})
+				$('#zc').click(function() {
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/login.html')
+				})
+				$('#dl').click(function() {
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/Enter.html')
+				})
+				$('.huawei').click(function() {
+					location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/phone.html')
+				})
+
+				$('#img1').click(function() {
+					if ($('#ipt1').val() == 'HUAWEI P40') {
+						location.assign('http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/HUAWEI%20P40.html')
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+
+		<!-- 标题 -->
+		<div class="tittle">
+			<div class="container">
+				<div class="pic">
+					<img src="img/WTDdguIWgNsNWtK0Q1Z3.png" style=" height: 50px; width: 120px;margin-top: 8px;margin-left: 20px;">
+				</div>
+				<div class="bt">
+					<ul>
+						<li class="huawei">|华为专区</li>
+						<li>手机</li>
+						<li>笔记本电脑</li>
+						<li>平板&穿戴</li>
+						<li>智能家居</li>
+						<li>配件</li>
+						<li>企业购</li>
+					</ul>
+				</div>
+				<div>
+					<input type="" name="" id="ipt1" value='' placeholder="   HUAWEI P40 " />
+					<img id="img1" src="img/搜索.png" style="height: 30px;position: absolute;right: 370px;top: 15px;">
+				</div>
+				<p id="dl">登录</p>
+				<p id="zc">注册</p>
+			</div>
+		</div>
+		<div class="clear" style="clear: both;"></div>
+		<div class="bcpic">
+			<div class="bcpic1">
+				<img src="img/18780353-2e5a-4018-89bb-5224a21c4901.jpg">
+				<img src="img/轮播.png">
+				<img src="img/轮播3.jpg">
+				<img src="img/轮播5.jpg">
+				<img src="img/轮播4.jpg">
+				<img src="img/轮播2.jpg">
+			</div>
+			<div class="butto">
+				<button type="button"></button>
+				<button type="button"></button>
+				<button type="button"></button>
+				<button type="button"></button>
+				<button type="button"></button>
+				<button type="button"></button>
+			</div>
+		</div>
+
+		<!-- 内容 -->
+		<div style="height: 6350px; background-color:#FFEED5;">
+			<div>
+				<img src="img/11341867-7093-4a45-87e0-2a1978881d96.jpg" style="margin-top: 5px;">
+			</div>
+			<div class="rmjp">
+				<div>
+					a<img src="img/3e00555d-2118-410f-b48e-57975977cf31.jpg">
+				</div>
+				<div class="top">
+					<a href="http://127.0.0.1:8848/%E5%8D%8E%E4%B8%BA/%E5%8D%8E%E4%B8%BAp40%E7%B3%BB%E5%88%97.html"><img src="img/62da8a88-5875-49ed-9093-6883665e8c51.jpg"
+						 style=" margin-top: 0.625rem;"></a>
+				</div>
+				<div class="container">
+					<div class="center">
+						<div style="margin-left: 0;">
+							<img src="img/685470e4-51d9-42f0-9079-f8321c19a791.png" style="height: 290px; width: 290px; background-color: white;">
+							<p class="p1">HUAWEI nova 7 5G</p>
+							<p class="p2">前置3200万像素高清自拍</p>
+									<p class="p3">¥2999起</p>
+						</div>
+						<div>
+							<img src="img/10ebeddc-c408-4248-aae2-eef6307cf1d2.png" style="height: 290px; width: 290px; background-color: white;">
+							<p class="p1">MatePad 5G 10.4英寸<p>
+									<p class="p2">5G全网通版 WIFI6+ 2K全面屏</p>
+											<p class="p3">¥3199<p>
+						</div>
+						<div>
+							<img src="img/685470e4-51d9-42f0-9079-f8321c19a791.png" style="height: 290px; width: 290px; background-color: white;">
+							<p class="p1">HUAWEI nova 7 Pro 5G</p>
+							<p class="p2">前置3200万追焦双摄</p>
+							<p class="p3">¥3699起</p>
+						</div>
+						<div>
+							<img src="img/90ccc54b-4127-4625-85e7-67a2a876521d.png" style="height: 290px; width: 290px; background-color: white;">
+							<p class="p1">HUAWEI Mate 30 5G</p>
+							<p class="p2">麒麟990 5G旗舰Soc芯片</p>
+									<p class="p3">¥4499起</p>
+						</div>
+					</div>
+					<div class="bottom">
+						<div style="margin-left: 0;">
+							<img src="img/9d80b9cb-f59e-4cd3-ac05-902886509377.png" style="height: 290px; width: 290px; background-color: white;">
+							<p class="p1">HUAWEI P40 5G<p>
+									<p class="p2">5000万超感知徕卡三摄</p>
+											<p class="p3">¥4488</p>
+						</div>
+						<div>
+							<img src="img/9d80b9cb-f59e-4cd3-ac05-902886509377.png" style="height: 290px; width: 290px; background-color: white;">
+							<p class="p1">HUAWEI P40 Pro</p>
+							<p class="p2">麒麟990 5G SoC芯片</p>
+							<p class="p3">¥5988</p>
+						</div>
+						<div>
+							<img src="img/2e0853c0-7adb-444b-8b59-19f12ae420d5.png" style="height: 290px; width: 290px; background-color: white;">
+							<p class="p1">HUAWEI nova 7 SE 5G</p>
+							<p class="p2">6400万高清四摄|40W超级快充</p>
+									<p class="p3">¥2399</p>
+						</div>
+						<div>
+							<img src="img/aa6f6f81-c02e-49f7-99bd-74e5b88ba9e7.png" style="height: 290px; width: 290px; background-color: white;">
+							<p class="p1">HUAWEI MateBook X Pro</p>
+							<p class="p2">13.9英寸华为旗舰办公电脑</p>
+							<p class="p3">¥8999起<p>
+						</div>
+					</div>
+				</div>
+				<div class="jxhh">
+					<img src="img/减排新品.jpg" style="margin-top: 10px;">
+					<div class="container">
+						<div class="jxhh1">
+							<div style="margin-left: 0;">
+								<img src="img/111.png" style="height: 290px; width: 290px; background-color: white;">
+								<p class="p1">HUAWEI P40 Pro+5G</p>
+								<p class="p2">5000万超感知徕卡五摄</p>
+								<p class="p3">¥7988起<p>
+							</div>
+							<div>
+								<img src="img/222.png" style="height: 290px; width: 290px; background-color: white;">
+								<p class="p1">华为畅享Z 5G</p>
+										<p class="p2">极速5G|一触即达</p>
+										<p class="p3">¥1699</p>
+							</div>
+							<div>
+								<img src="img/333.png" style="height: 290px; width: 290px; background-color: white;">
+								<p class="p1">华为畅享20 Plus</p>
+										<p class="p2">40w超级快充|90Hz高刷真全屏</p>
+										<p class="p3">¥2299起</p>
+							</div>
+							<div>
+								<img src="img/444.png" style="height: 290px; width: 290px; background-color: white;">
+								<p class="p1">华为畅享20 5G</p>
+								<p class="p2">5000mAh大电池|6.6英寸高清大屏</p>
+										<p class="p3">¥1899起</p>
+							</div>
+						</div>
+						<div class="jxhh2">
+							<div style="margin-left: 0;">
+								<img src="img/555.png" style="height: 290px; width: 290px; background-color: white;">
+								<ul>
+									<p class="p1">HUAWEI Mate 30 Pro 5G</p>
+									<p class="p2">双4000万徕卡电影四摄</p>
+											<p class="p3">¥5899起</p>
+								</ul>
+							</div>
+							<div>
+								<img src="img/666.png" style="height: 290px; width: 290px; background-color: white;">
+								<p class="p1">华为畅享20 Pro 5G</p>
+								<p class="p2">4800万高感光夜拍</p>
+								<p class="p3">¥1999起</p>
+							</div>
+							<div>
+								<img src="img/777.png" style="height: 290px; width: 290px; background-color: white;">
+								<p class="p1">HUAWEI Mate Xs</p>
+										<p class="p2">鹰翼式折叠设计</p>
+										<p class="p3">¥16999<p>
+							</div>
+							<div>
+								<img src="img/888.png" style="height: 290px; width: 290px; background-color: white;">
+								<p class="p1">Mate 30 RS 保时捷设计</p>
+										<p class="p2">超曲面OLED环屏幕</p>
+										<p class="p3">¥12999起</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="jxdp">
+					<img src="img/a3b47500-3204-410f-85fc-fbc21a7da250.jpg" style="margin-top: 10px;">
+					<div class="jxdp1">
+						<div class="container">
+							<img src="img/999.png">
+							<div class="jxdp2">
+								<p class="p1">HUAWEI WATCH GT 2e</p>
+										<p class="p2">百种运动类型|音乐播放</p>
+										<p class="p3">¥1288</p>
+										<img src="img/1010.png" style="height: 170px; width: 170px; margin-left: 70px; margin-top: 50px;">
+							</div>
+							<div class="jxdp2">
+								<p class="p1">HUAWEI VR Glass</p>
+										<p class="p2">IMAX巨幕体验</p>
+										<p class="p3">¥2999</p>
+										<img src="img/1011.png" style="height: 170px; width: 170px; margin-left: 70px; margin-top: 50px;">
+							</div>
+
+							<div class="jxdp3">
+								<div style="margin-left: 0;">
+									<img src="img/2001.png" style="height: 290px; width: 290px; background-color: white;">
+									<p class="p1">HUAWEI X GM眼镜新品</p>
+											<p class="p2">丰富立体声场|3D触控系统</p>
+											<p class="p3">¥2499起</p>
+								</div>
+								<div>
+									<img src="img/2002.png" style="height: 290px; width: 290px; background-color: white;">
+									<p class="p1">HUAWEI WATCH GT 2</p>
+											<p class="p2">享3期免息+赠礼</p>
+													<p class="p3">¥1488</p>
+								</div>
+								<div>
+									<img src="img/2003.png" style="height: 290px; width: 290px; background-color: white;">
+									<ul>
+										<p class="p1">华为儿童手表</p>
+										<p class="p2">50米防水|高清双摄</p>
+												<p class="p3">¥1398<p>
+									</ul>
+								</div>
+								<div>
+									<img src="img/2004.png" style="height: 290px; width: 290px; background-color: white;">
+									<p class="p1">华为手环 B6</p>
+									<p class="p2">智能通话手环 3D弧面触控彩屏</p>
+											<p class="p3">¥999</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="jzsh">
+					<img src="img/9926160c-26be-4359-ad25-6aa88e0bc0e7.jpg" style=" margin-top: 10px;">
+					<div class="container">
+						<div style="margin-left: 0;">
+							<img src="img/音响.png">
+							<p class="p1">华为AI音响2</p>
+							<p class="p2">华为分享一碰传音</p>
+							<p class="p3">￥399</p>
+						</div>
+						<div>
+							<img src="img/手机.jpg">
+							<p class="p1">荣耀30S</p>
+							<p class="p2">麒麟820 5G芯片|3倍光学变焦</p>
+							<p class="p3">￥2399起</p>
+						</div>
+						<div>
+							<img src="img/手机3.png">
+							<p class="p1">HUAWEI nova 7 Pro 5G</p>
+							<p class="p2">前置3200万追焦双摄</p>
+							<p class="p3">￥3699起</p>
+						</div>
+						<div>
+							<img src="img/手机2.png">
+							<p class="p1">荣耀Play4</p>
+							<p class="p2">6400万锐利四摄</p>
+							<p class="p3">￥1999</p>
+						</div>
+						<div style="margin-left: 0;">
+							<img src="img/电脑.png">
+							<p class="p1">华为 MatePad 10.8英寸</p>
+							<p class="p2">麒麟990旗舰芯片</p>
+							<p class="p3">￥2399起</p>
+						</div>
+						<div>
+							<img src="img/耳机.jpg">
+							<p class="p1">荣耀 FlyPods 3</p>
+							<p class="p2">纯正音色|静无止静</p>
+							<p class="p3">￥599</p>
+						</div>
+						<div>
+							<img src="img/电子秤.jpg">
+							<p class="p1">华为智能体脂称</p>
+							<p class="p2">14项身体数据|wifi&蓝牙双链接</p>
+							<p class="p3">￥169</p>
+						</div>
+						<div>
+							<img src="img/手机4.jpg">
+							<p class="p1">荣耀V30 PRO</p>
+							<p class="p2">突破性相机矩阵|双超级快充</p>
+							<p class="p3">￥3399起</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="remai">
+				<img src="img/热卖金品.jpg" style=" margin-top: 10px;">
+				<div class="container">
+					<div style="margin-left: 0;">
+						<img src="img/耳机1.jpg">
+						<p class="p1">荣耀xSport PRO</p>
+						<p class="p2">18小时长续航|5分钟快充</p>
+						<p class="p3">￥299</p>
+					</div>
+					<div>
+						<img src="img/路由器.jpg">
+						<p class="p1">荣耀路由3</p>
+						<p class="p2">Wifi6+智能分频</p>
+						<p class="p3">￥209</p>
+					</div>
+					<div>
+						<img src="img/手环.png">
+						<p class="p1">华为手环B6</p>
+						<p class="p2">智能通话手环 3D弧面触控彩屏</p>
+						<p class="p3">￥999</p>
+					</div>
+					<div>
+						<img src="img/手表.jpg">
+						<p class="p1">HONOR MagicWatch 2</p>
+						<p class="p2">强劲续航|私人运动助手</p>
+						<p class="p3">￥899</p>
+					</div>
+					<div style="margin-left: 0;">
+						<img src="img/颈部按摩器.png">
+						<p class="p1">温热舒压颈部按摩器</p>
+						<p class="p2">仿真脉冲按摩|40℃恒温散热</p>
+						<p class="p3">￥329</p>
+					</div>
+					<div>
+						<img src="img/保温杯.png">
+						<p class="p1">vsitoo 智能保温杯</p>
+						<p class="p2">实时温度显示|秒测水质纯净度</p>
+						<p class="p3">￥139</p>
+					</div>
+					<div>
+						<img src="img/牙刷.png">
+						<p class="p1">立博得智能声波牙刷</p>
+						<p class="p2">36变智能美齿|定格自信笑容</p>
+						<p class="p3">￥299</p>
+					</div>
+					<div>
+						<img src="img/指纹锁.png">
+						<p class="p1">VOC智能门锁X8</p>
+						<p class="p2">银行级加密芯片</p>
+						<p class="p3">￥1288</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<ul id="dhl">
+			<li class="li1" style="margin-left: 220px;">金选好货</li>
+			<li class="li2">金牌新品</li>
+			<li class="li3">金新搭配</li>
+			<li class="li4">金致生活</li>
+			<li class="li6">热卖金品</li>
+			<li class="li5">回到顶部</li>
+		</ul>
+		<div class="flzq" style="height: 1400px;background-color: #FFEED5;">
+			<img src="img/拼团.jpg" alt="">
+			<img src="img/大照片.png" style="margin-left: -10px;">
+			<img src="img/大照片2.png" style="margin-left: -10px;margin-top: -20px;">
+			<div class="container">
+				<div id="gdt" style="margin-top: 30px;margin-top: 15px;">
+					<div class="gdt1">
+						<img src="img/标题1.jpg">
+						<img src="img/标题2.png">
+						<img src="img/标题3.jpg">
+						<img src="img/标题4.jpg">
+					</div>
+					<ul>
+						<li class="li11">1</li>
+						<li class="li22">2</li>
+						<li class="li33">3</li>
+						<li class="li44">4</li>
+					</ul>
+				</div>
+			</div>
+			<img src="img/大图片3.png" style="margin-top: 50px;margin-left: -10px;">
+		</div>
+	</body>
+</html>
